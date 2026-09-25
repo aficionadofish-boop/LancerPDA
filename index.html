@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Receiver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="receiver.css">
+</head>
+<body>
+<div class="console">
+
+  <header class="plate header riveted">
+    <div class="power">
+      <span class="lamp lamp-red is-on" aria-hidden="true"></span>
+      <span class="stencil">PWR</span>
+    </div>
+    <div class="brand">
+      <span class="brand-title" id="brand-title">FIELD RECEIVER</span>
+      <span class="brand-model" id="brand-model">MK-II</span>
+    </div>
+    <div class="tag-plate" id="brand-station">UNIT 00-000</div>
+    <div class="led-window clock" aria-label="Clock">
+      <span class="led-ghost" aria-hidden="true">88:88:88</span>
+      <span class="led-live" id="clock">00:00:00</span>
+    </div>
+  </header>
+
+  <aside class="plate log-panel riveted" aria-label="Signal log">
+    <div class="panel-title"><span class="stencil">SIGNAL LOG</span></div>
+    <div class="channel-keys" role="radiogroup" aria-label="Channel">
+      <button class="key key-small" data-filter="all" role="radio">ALL</button>
+      <button class="key key-small" data-filter="comms" role="radio">COMMS</button>
+      <button class="key key-small" data-filter="intel" role="radio">INTEL</button>
+      <button class="key key-small" data-filter="map" role="radio">CHARTS</button>
+    </div>
+    <div class="log-well">
+      <div class="log-list" id="log-list"></div>
+    </div>
+  </aside>
+
+  <main class="bezel" aria-label="Screen">
+    <span class="screw s1" aria-hidden="true"></span><span class="screw s2" aria-hidden="true"></span>
+    <span class="screw s3" aria-hidden="true"></span><span class="screw s4" aria-hidden="true"></span>
+    <div class="crt" id="crt">
+      <div class="crt-content" id="screen" tabindex="0" aria-live="polite"></div>
+      <canvas class="crt-static" id="static" width="160" height="110" aria-hidden="true"></canvas>
+      <div class="crt-glass" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <aside class="plate control-panel riveted" aria-label="Controls">
+    <div class="control gauge-box">
+      <div class="gauge-wrap">
+      <svg class="gauge" viewBox="0 0 160 104" aria-hidden="true">
+        <defs>
+          <radialGradient id="face" cx="50%" cy="85%" r="85%">
+            <stop offset="0" stop-color="#1f2320"/><stop offset="1" stop-color="#0c0e0d"/>
+          </radialGradient>
+        </defs>
+        <rect x="2" y="2" width="156" height="100" rx="8" fill="url(#face)" stroke="#060707" stroke-width="3"/>
+        <g id="gauge-ticks"></g>
+        <text x="80" y="62" class="gauge-label">SIGNAL</text>
+        <text x="80" y="74" class="gauge-unit">%</text>
+      </svg>
+      <!-- Needle is HTML so its movement and tremble run as CSS animations on the compositor,
+           not as script redraws (script redraws made the ticker stutter in Firefox). -->
+      <div class="needle" id="needle" aria-hidden="true"><i></i></div>
+      <div class="needle-cap" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="control">
+      <div class="stencil small">SIGNAL No.</div>
+      <div class="led-window counter">
+        <span class="led-ghost" aria-hidden="true">888/888</span>
+        <span class="led-live" id="counter">---/---</span>
+      </div>
+    </div>
+
+    <div class="control nav-keys">
+      <button class="key key-cream" id="btn-older" aria-label="Older signal">&#9664; OLDER</button>
+      <button class="key key-cream" id="btn-newer" aria-label="Newer signal">NEWER &#9654;</button>
+    </div>
+
+    <div class="control switches">
+      <div class="knob-box">
+        <div class="knob-scale" aria-hidden="true"><span>AMB</span><span>GRN</span><span>WHT</span></div>
+        <button class="knob" id="knob" aria-label="Phosphor colour"><span class="knob-mark"></span></button>
+        <div class="stencil small">PHOSPHOR</div>
+      </div>
+      <div class="toggle-box">
+        <span class="stencil tiny">ON</span>
+        <button class="toggle" id="toggle-sound" role="switch" aria-checked="true" aria-label="Sound"><span class="lever"></span></button>
+        <span class="stencil tiny">OFF</span>
+        <div class="stencil small">SOUND</div>
+      </div>
+    </div>
+
+    <div class="control">
+      <button class="key key-red" id="btn-skip">SKIP<br><span class="key-sub">PRINT-OUT</span></button>
+    </div>
+  </aside>
+
+  <footer class="plate footer riveted">
+    <div class="hazard" aria-hidden="true"></div>
+    <div class="ticker-window"><div class="ticker" id="ticker"></div></div>
+    <div class="hazard" aria-hidden="true"></div>
+  </footer>
+
+</div>
+
+<div class="loupe" id="loupe" hidden>
+  <div class="loupe-frame">
+    <div class="loupe-bar">
+      <span class="stencil">CHART VIEWER</span>
+      <span class="loupe-keys">
+        <button class="key key-small" id="zoom-out" aria-label="Zoom out">&minus;</button>
+        <button class="key key-small" id="zoom-in" aria-label="Zoom in">+</button>
+        <button class="key key-small key-red" id="loupe-close">CLOSE</button>
+      </span>
+    </div>
+    <div class="loupe-view" id="loupe-view"><img id="loupe-img" alt=""></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="sound.js"></script>
+<script src="receiver.js"></script>
+</body>
+</html>
