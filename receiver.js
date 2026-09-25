@@ -506,7 +506,7 @@
 
     if (booted && start) { show(start, { quiet: true }); return; }
     idle(lines);
-    if (REDUCED) { if (start) show(start, { instant: true }); return; }
+    if (REDUCED || NOBOOT) { if (start) show(start, { instant: true }); return; }
     typeOut(screen, function () {
       if (start) setTimeout(function () { if (!current) show(start); }, 700);
     });
