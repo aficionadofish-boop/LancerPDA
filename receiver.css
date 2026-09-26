@@ -825,7 +825,9 @@ button { font: inherit; color: inherit; }
 
 /* imperial: sealed transmissions from the divine empire */
 .style-imperial { text-align: left; }
-.imp-seal { display: block; width: 240px; max-width: 70%; height: auto; margin: 0 auto 2px; color: var(--ph); }
+/* Drawn 1:1 so its feathers match the 3px scanline pitch; receiver.js alignSeal() nudges it
+   onto the lit rows. Only shrinks on very narrow screens (alignment is then approximate). */
+.imp-seal { display: block; width: 240px; max-width: 100%; height: auto; margin: 0 auto 2px; color: var(--ph); }
 .imp-seal .dk { fill: var(--ph-bg-edge); }
 .imp-seal .dk-stroke { stroke: var(--ph-bg-edge); }
 .imp-head {

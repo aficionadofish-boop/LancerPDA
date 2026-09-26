@@ -340,8 +340,9 @@
         band("left") + '<div class="imp-inner">' + metaBlock + chart + body + "</div>" + band("right") +
         corner("bl") + band("bottom") + corner("br") + "</div>" +
         '<div class="scr-end">' + (item.footer ? esc(item.footer) : "— SEAL UNBROKEN —") + "</div></div>";
-      layoutBands();
       screen.scrollTop = 0;
+      alignSeal();
+      layoutBands();
       updateCorruption();
       return;
     } else {
@@ -356,6 +357,21 @@
     if (style === "machine") corruptWords(screen.querySelector(".scr-body"), 0.12);
     screen.scrollTop = 0;
     updateCorruption();
+  }
+
+  // The seal's feathers are drawn one per CRT scanline (see tools/make_seal.py). Nudge the seal
+  // down 0-2px so the first feather starts on a lit row of the scanline pattern (.crt-glass:
+  // dark row at 0, lit rows 1-2 of every 3px). Only possible when drawn at 1:1.
+  function alignSeal() {
+    var seal = screen.querySelector(".imp-seal"), bars = window.RECEIVER_SEAL_BARS;
+    var glass = document.querySelector(".crt-glass");
+    if (!seal || !bars || !glass) return;
+    seal.style.marginTop = "0px";
+    var r = seal.getBoundingClientRect(), g = glass.getBoundingClientRect();
+    if (Math.abs(r.width / bars.width - 1) > 0.01) return;
+    var first = r.top - g.top + bars.y0;
+    var nudge = ((1 - first) % bars.pitch + bars.pitch) % bars.pitch;
+    seal.style.marginTop = nudge.toFixed(2) + "px";
   }
 
   // Imperial border inscription: the motto's phrases run continuously round the frame — top,
