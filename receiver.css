@@ -904,6 +904,163 @@ button { font: inherit; color: inherit; }
 }
 .style-imperial .scr-end { font-family: "Cinzel", serif; letter-spacing: 0.25em; }
 
+/* record: ship-internal paperwork — a printed form in a double frame, not a transmission */
+.style-record {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.78em;
+  line-height: 1.5;
+  border: 3px double var(--ph-dim);
+  padding: 20px 26px 16px;
+}
+.rec-org { text-align: center; font-size: 0.85em; letter-spacing: 0.3em; opacity: 0.65; }
+.rec-title {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 1.55em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin: 6px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 3px double var(--ph-dim);
+}
+.rec-fields { display: flex; flex-wrap: wrap; border: 1px solid var(--ph-dim); margin-bottom: 18px; }
+.rec-field {
+  flex: 1 1 150px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 10px 6px;
+  border-right: 1px solid var(--ph-dim);
+}
+.rec-field:last-child { border-right: 0; }
+.rec-label { font-size: 0.72em; letter-spacing: 0.18em; opacity: 0.6; }
+.rec-value { text-transform: uppercase; overflow-wrap: anywhere; }
+.style-record h2, .style-record h3, .style-record h4 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 1.02em;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  margin: 1.4em 0 0.6em;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--ph-dim);
+}
+.style-record strong { background: none; color: inherit; text-shadow: inherit; border: 1px solid var(--ph-dim); padding: 0 5px; }
+.rec-stamp-row { text-align: right; margin: 1em 6px 0; }
+.rec-stamp {
+  display: inline-block;
+  transform: rotate(-7deg);
+  border: 3px double var(--ph);
+  padding: 3px 14px 1px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: 0.24em;
+  opacity: 0.85;
+}
+.style-record .scr-end { border-top: 1px solid var(--ph-dim); padding-top: 8px; font-size: 0.85em; }
+
+/* tables (all styles) */
+.crt-content table { border-collapse: collapse; margin: 0 0 0.9em; }
+.crt-content th, .crt-content td { border: 1px solid var(--ph-dim); padding: 2px 10px; text-align: left; vertical-align: top; }
+.crt-content th { font-weight: normal; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; }
+
+/* ---------- crew handbook: a printed card, not the CRT ---------- */
+
+.handbook {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(5, 5, 4, 0.86);
+}
+.handbook[hidden] { display: none; }
+.handbook-frame {
+  display: flex;
+  flex-direction: column;
+  width: min(1060px, 100%);
+  height: min(860px, 100%);
+  padding: 12px 14px 14px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #050605;
+}
+.handbook-body { flex: 1; min-height: 0; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 12px; }
+.handbook-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 10px 8px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #000 0, var(--well) 8px);
+  overflow-y: auto;
+}
+.hb-tab { text-align: left; flex: none; }
+.handbook-page {
+  overflow-y: auto;
+  padding: 26px 36px 30px 44px;
+  border-radius: 3px;
+  border: 1px solid #5b5440;
+  outline: 3px solid #1a1c1b;
+  /* a laminated manual page: cream card with a red margin rule */
+  background:
+    linear-gradient(90deg, transparent 26px, rgba(163, 50, 32, 0.4) 26px 27px, transparent 27px),
+    linear-gradient(180deg, #e8dfc4, #d5caa8);
+  color: var(--ink);
+  font-family: "Share Tech Mono", monospace;
+  font-size: 15px;
+  line-height: 1.55;
+  scrollbar-width: thin;
+  scrollbar-color: #8a8068 transparent;
+}
+.handbook-page:focus { outline: 3px solid #1a1c1b; }
+.hb-kicker { font-family: "Oswald", sans-serif; font-size: 11px; letter-spacing: 0.26em; color: #6b624c; }
+.hb-title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 2px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 3px double var(--ink);
+}
+.handbook-page h2, .handbook-page h3, .handbook-page h4 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 1.3em 0 0.4em;
+}
+.handbook-page p { margin: 0 0 0.8em; }
+.handbook-page ul, .handbook-page ol { margin: 0 0 0.8em; padding-left: 1.4em; }
+.handbook-page li { margin-bottom: 0.2em; }
+.handbook-page strong { font-family: "Oswald", sans-serif; font-weight: 600; letter-spacing: 0.03em; }
+.handbook-page table { border-collapse: collapse; width: 100%; margin: 0 0 1em; }
+.handbook-page th, .handbook-page td { border: 1px solid rgba(38, 34, 27, 0.55); padding: 4px 10px; text-align: left; vertical-align: top; }
+.handbook-page th {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(38, 34, 27, 0.08);
+}
+.handbook-page blockquote { margin: 0 0 0.8em; padding: 2px 0 2px 12px; border-left: 3px solid var(--red-cap); }
+.handbook-page hr { border: 0; border-top: 1px dashed rgba(38, 34, 27, 0.5); margin: 1.2em 0; }
+.handbook-page .redact { background: var(--ink); }
+
+/* While a viewer is open, the console behind it holds still (fewer full-page repaints in Firefox). */
+body.modal-open .ticker,
+body.modal-open .needle i,
+body.modal-open .lamp.is-blink { animation-play-state: paused; }
+
 /* ---------- skin: scratched steel ---------- */
 
 body.skin-steel {
@@ -966,6 +1123,11 @@ body.skin-steel {
   .log-panel { padding: 16px 12px; }
   .log-list { max-height: 420px; }
   .hazard { width: 40px; }
+  .handbook { padding: 6px; }
+  .handbook-body { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .handbook-tabs { flex-direction: row; flex-wrap: wrap; }
+  .handbook-page { padding: 18px 16px 22px 30px; font-size: 14px; }
+  .style-record { padding: 14px 14px 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

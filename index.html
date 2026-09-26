@@ -129,8 +129,9 @@
       </div>
     </div>
 
-    <div class="control">
-      <button class="key key-red" id="btn-skip">SKIP<br><span class="key-sub">PRINT-OUT</span></button>
+    <div class="control handbook-control">
+      <div class="stencil small">REFERENCE</div>
+      <button class="key key-cream" id="btn-handbook" disabled>CREW<br><span class="key-sub">HANDBOOK</span></button>
     </div>
   </aside>
 
@@ -153,6 +154,21 @@
       </span>
     </div>
     <div class="loupe-view" id="loupe-view"><img id="loupe-img" alt=""></div>
+  </div>
+</div>
+
+<div class="handbook" id="handbook" hidden role="dialog" aria-label="Crew handbook">
+  <div class="handbook-frame riveted">
+    <div class="loupe-bar">
+      <span class="stencil">CREW HANDBOOK</span>
+      <span class="loupe-keys">
+        <button class="key key-small key-red" id="handbook-close">CLOSE</button>
+      </span>
+    </div>
+    <div class="handbook-body">
+      <nav class="handbook-tabs" id="handbook-tabs" role="tablist" aria-label="Sections"></nav>
+      <article class="handbook-page" id="handbook-page" tabindex="0"></article>
+    </div>
   </div>
 </div>
 

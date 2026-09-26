@@ -12,6 +12,7 @@ window.RECEIVER_DATA = {
   ],
   "realtime": "5016U",
   "realtime_label": "UNION RT (EST)",
+  "record_header": "UNS ILLÉRI // SHIP RECORD",
   "imperial_motto": "IN LUCE PERPETUA ✦ FIDES ET SILENTIUM ✦ NIHIL SINE DECRETO ✦ CUSTODES SEMINIS",
   "skin": "steel"
  },
@@ -32,6 +33,40 @@ window.RECEIVER_DATA = {
    "footer": "— STANDING ORDER · VALID UNTIL SUPERSEDED —",
    "pinned": true,
    "validity": "VALID"
+  },
+  {
+   "id": "002",
+   "title": "Primary Training Certification",
+   "type": "intel",
+   "style": "record",
+   "from": "Hangar Division, Training Office",
+   "origin": "LOCAL",
+   "sent": "SY 41.07.22",
+   "received": "",
+   "lag": "",
+   "signal": 100,
+   "html": "<table><tbody><tr><td>Programme</td><td>General Massive Systems Maintenance and Operations</td></tr><tr><td>Stream</td><td>Heavy machinery (SY 36 aptitude assessment)</td></tr><tr><td>Duration</td><td>Five ship-years</td></tr></tbody></table>\n<h2>Candidates</h2>\n<table><thead><tr><th>Candidate</th><th>Result</th><th>Grade</th></tr></thead><tbody><tr><td>PILOT 1</td><td>Certified</td><td>Outstanding</td></tr><tr><td>PILOT 2</td><td>Certified</td><td>Outstanding</td></tr><tr><td>PILOT 3</td><td>Certified</td><td>Outstanding</td></tr></tbody></table>\n<h2>Basis for selection</h2>\n<p>Candidates were streamed to heavy machinery at the SY 36 assessment on the following indicators, each in the top decile of the intake:</p>\n<ul><li>reaction speed under load;</li><li>clarity of communication under stress;</li><li>tactical and spatial awareness;</li><li>neural sync tolerance with heavy chassis interfaces.</li></ul>\n<h2>Assessed modules</h2>\n<table><thead><tr><th>Module</th><th>Result</th></tr></thead><tbody><tr><td>Chassis maintenance: frame, actuators, armour, systems</td><td>Passed</td></tr><tr><td>Reactor safety and heat management</td><td>Passed</td></tr><tr><td>Printer-pattern assembly and field repair</td><td>Passed</td></tr><tr><td>Heavy chassis operation: movement, EVA, hard vacuum</td><td>Passed</td></tr><tr><td>Squad communications and command protocol</td><td>Passed</td></tr><tr><td>Combat operations (simulator only)</td><td>Passed</td></tr></tbody></table>\n<h2>Assignment</h2>\n<p>On certification, all three candidates are assigned to the <strong>Pathfinder Lance</strong> as pilots, commissioned Ensign on certification. Secondary training is assigned separately.</p>\n<h2>Remarks</h2>\n<p>Candidates are advised that the Subjectivity-Enhancement Suite is strongly recommended for all heavy chassis pilots. Fitting may be requested through the Medical Division.</p>\n<p>— Training Office, Hangar Division<br>— Countersigned: PERSEVERANCE (cycle 9), for the Medical Division</p>",
+   "ref": "ILR/HD-TR-0041-07",
+   "footer": "FILED TO PERSONNEL RECORD",
+   "stamp": "CERTIFIED"
+  }
+ ],
+ "reference": [
+  {
+   "title": "Ship Time",
+   "html": "<h2>Ship Years</h2>\n<p>Aboard the Illéri, dates are kept in <strong>Ship Years (SY)</strong>, counted from the day the ship left Union space.</p>\n<table><tbody><tr><td>SY 0</td><td>Departure, 4516U by Union reckoning</td></tr><tr><td>SY 51</td><td>The current year</td></tr></tbody></table>\n<p>Ship dates are written year, month, day: <strong>SY 41.07.22</strong> is the 22nd day of the 7th month of the 41st year.</p>\n<h2>Two clocks</h2>\n<p>At nearlight speed, time aboard runs slower than time at home. One year aboard is about <strong>ten years</strong> in Union space. While the Illéri holds station in a system, the two clocks run together.</p>\n<p>So since departure, about 51 years have passed aboard and about 500 in Union space.</p>\n<h2>The readouts</h2>\n<ul><li><strong>SHIP TIME:</strong> the ship's clock.</li><li><strong>UNION RT (EST):</strong> Navigation's estimate of the present date in Union space. It can't be checked until contact is restored.</li></ul>\n<h2>Dates on traffic</h2>\n<ul><li>Documents from Union carry Union dates, marked with a U: <strong>4516U</strong>.</li><li>Records made aboard carry ship dates: <strong>SY 41</strong>.</li><li><strong>LAG</strong> on a transmission is the time between sending and receipt.</li></ul>"
+  },
+  {
+   "title": "Ranks",
+   "html": "<h2>Officers</h2>\n<table><thead><tr><th>Rank</th><th>Duty</th></tr></thead><tbody><tr><td>Captain</td><td>Commands the ship. Whoever commands the Illéri is addressed as Captain.</td></tr><tr><td>Commander</td><td>Heads a division.</td></tr><tr><td>Lieutenant Commander</td><td>Deputy head of a division.</td></tr><tr><td>Lieutenant</td><td>Leads a section within a division.</td></tr><tr><td>Ensign</td><td>Junior officer. Heavy chassis pilots are commissioned Ensign.</td></tr></tbody></table>\n<p><strong>Captain Cain Verym</strong> also holds the title <strong>Proconsul</strong>, the authority granted to the commander of the Expedition under the Charter of Expedition.</p>\n<h2>Enlisted</h2>\n<table><thead><tr><th>Rank</th><th>Duty</th></tr></thead><tbody><tr><td>Chief of the Ship</td><td>The most senior enlisted crew member, and the link between the crew and the officers.</td></tr><tr><td>Chief Petty Officer</td><td>Senior hand of a section.</td></tr><tr><td>Petty Officer</td><td>Leads a work team.</td></tr><tr><td>Crewman</td><td>Qualified crew member.</td></tr><tr><td>Apprentice</td><td>Crew member in training.</td></tr></tbody></table>\n<h2>Seniority</h2>\n<p>Rank follows responsibility, and responsibility usually follows age. A higher rank is not a reward: it is a greater share of the Expedition's burden.</p>"
+  },
+  {
+   "title": "Divisions",
+   "html": "<h2>Command</h2>\n<p>The <strong>Captain</strong> commands the ship. The <strong>Executive Officer (XO)</strong> is second in command: runs the ship day to day, keeps discipline, sets the duty rosters, and assumes command if the Captain cannot.</p>\n<h2>Divisions</h2>\n<table><thead><tr><th>Division</th><th>Responsibility</th></tr></thead><tbody><tr><td>Engineering</td><td>Reactor, drive, life support, hull</td></tr><tr><td>Fabrication &amp; Stores</td><td>Printers, the pattern library, feedstock, rations</td></tr><tr><td>Navigation</td><td>Course, sensors, astrogation, charting</td></tr><tr><td>Weapons</td><td>Main batteries and point defence</td></tr><tr><td>Hangar</td><td>Mechs, powered suits, shuttles</td></tr><tr><td>Medical</td><td>Health, implants, fitness for duty</td></tr><tr><td>Mission Office</td><td>The Charter, contact protocols, the archives</td></tr></tbody></table>\n<h2>Hangar teams</h2>\n<ul><li><strong>Pathfinder Lance:</strong> heavy chassis pilots, for all operations off the ship.</li><li><strong>Work crew:</strong> heavy powered suits, for maintenance and repair on the ship.</li></ul>\n<h2>Perseverance</h2>\n<p><strong>Perseverance</strong> is the Illéri's NHP. It runs the ship's systems and works with every division: with the XO on duty rosters, and with Medical on fitness for duty. By regulation, it is cycled every five years.</p>"
+  },
+  {
+   "title": "Life Aboard",
+   "html": "<h2>Enlistment</h2>\n<p>Every person born aboard is enlisted in the Expedition from birth. Births are allotted by <strong>birth ticket</strong>.</p>\n<h2>Training</h2>\n<ol><li><strong>Aptitude assessment</strong> at age 14 decides what each crew member is best suited to learn.</li><li><strong>Primary training</strong>, five years in the assigned field. This is the crew member's main duty.</li><li><strong>Secondary training</strong> in a second duty. Crew serve in their secondary duty whenever their main duty is not required, so that no hand is idle and every post has a relief.</li></ol>\n<h2>Rations</h2>\n<p>Rations are allotted to working crew. Each week the crew votes on the flavouring of the next meal cycle. It is the only matter aboard that is put to a vote.</p>\n<h2>Fitness for duty</h2>\n<p>Perseverance and the Medical Division assess every crew member's fitness for duty.</p>\n<p>A crew member who can no longer perform their duties, through injury or age, is offered <strong>augmentation</strong>. Those who decline are euthanised under Medical Division protocol.</p>\n<h2>For pilots</h2>\n<p>The <strong>Subjectivity-Enhancement Suite</strong> is strongly recommended for all heavy chassis pilots. Fitting may be requested through the Medical Division.</p>"
   }
  ]
 };

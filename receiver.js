@@ -194,7 +194,6 @@
 
   /* ---------- typewriter ---------- */
 
-  var skipKey = $("btn-skip");
   function typeOut(root, onDone) {
     // Decorative text (.no-type: imperial border bands) appears at once, not letter by letter.
     var skipDecor = { acceptNode: function (t) {
@@ -212,7 +211,6 @@
       done = true;
       for (var i = idx; i < nodes.length; i++) nodes[i].node.nodeValue = nodes[i].text;
       typing = null;
-      skipKey.disabled = true;
       if (onDone) onDone();
     }
     function frame(now) {
@@ -232,7 +230,6 @@
       else requestAnimationFrame(frame);
     }
     typing = { finish: finish };
-    skipKey.disabled = false;
     requestAnimationFrame(frame);
   }
 
@@ -272,6 +269,7 @@
   // from, origin, sent, received, lag, subject, signal.
   var STYLE_LABELS = {
     plain:    ["FROM", "ORIGIN", "SENT", "RECEIVED", "LAG", "SUBJ", "SIGNAL"],
+    record:   ["ISSUED BY", "ORIGIN", "DATE", "FILED", "LAG", "SUBJ", "SIGNAL"],   // shown as a form, see render()
     ucm:      ["FROM", "ORIGIN", "TRANSMITTED", "RECEIVED", "LAG", "SUBJ", "SIGNAL"],
     archive:  ["SOURCE", "ORIGIN", "WRITTEN", "RECOVERED", "AGE", "SUBJ", "INTEGRITY"],
     machine:  ["SRC", "ORIGIN", "T.SENT", "T.RECV", "DELTA", "TAG", "SIG"],
@@ -312,6 +310,26 @@
     var body = '<div class="scr-body">' + item.html + "</div>";
     var metaBlock = '<dl class="scr-meta">' + meta + "</dl>";
     var head, end, extra = "";
+
+    if (style === "record") {
+      // Ship-internal paperwork: a printed form, not a transmission — no lag, no signal, a stamp.
+      var field = function (label, value) {
+        return value ? '<div class="rec-field"><span class="rec-label">' + label + '</span><span class="rec-value">' +
+          esc(value) + "</span></div>" : "";
+      };
+      screen.innerHTML =
+        '<div class="scr style-record">' +
+        '<div class="rec-org">' + esc(CFG.record_header || "SHIP RECORD") + " · " + esc(item.id) + "</div>" +
+        '<div class="rec-title">' + esc(item.title) + "</div>" +
+        '<div class="rec-fields">' + field("FILE NO.", item.ref) + field("ISSUED BY", item.from) +
+        field("DATE", item.sent || item.received) + "</div>" +
+        chart + body +
+        (item.stamp ? '<div class="rec-stamp-row no-type"><span class="rec-stamp">' + esc(item.stamp) + "</span></div>" : "") +
+        '<div class="scr-end">' + (item.footer ? esc(item.footer) : "— END OF RECORD —") + "</div></div>";
+      screen.scrollTop = 0;
+      updateCorruption();
+      return;
+    }
 
     if (style === "ucm") {
       head = "▌UCM TRAFFIC " + esc(item.id);
@@ -472,7 +490,7 @@
       b.innerHTML =
         '<span class="lamp"></span>' +
         '<span class="log-meta"><span>' + esc(h.id) + '</span><span class="log-type">' + TYPE_SHORT[h.type] + "</span>" +
-        (h.received ? "<span>" + esc(h.received) + "</span>" : "") + "</span>" +
+        (h.received || h.sent ? "<span>" + esc(h.received || h.sent) + "</span>" : "") + "</span>" +
         '<span class="log-title">' + esc(h.title) + "</span>" +
         '<span class="log-from">' + esc(h.from || "UNKNOWN SOURCE") + "</span>";
       pressable(b, function () { if (h.id !== current) show(h.id); });
@@ -545,8 +563,6 @@
   });
   pressable($("btn-older"), function () { step(-1); });
   pressable($("btn-newer"), function () { step(1); });
-  pressable(skipKey, function () { if (typing) typing.finish(); });
-  skipKey.disabled = true;
   pressable($("btn-orders"), function () {
     if (!directive) return;
     if (filter !== "all" && directive.type !== filter) { filter = "all"; buildList(); }
@@ -610,12 +626,13 @@
   }
   function openLoupe(src) {
     loupe.hidden = false;
+    document.body.classList.add("modal-open");
     Sound.toggle();
     limg.onload = function () { zoom = fitZoom(); limg.style.width = Math.round(limg.naturalWidth * zoom) + "px"; };
     limg.src = src;
     $("loupe-close").focus();
   }
-  function closeLoupe() { loupe.hidden = true; screen.focus(); }
+  function closeLoupe() { loupe.hidden = true; document.body.classList.remove("modal-open"); screen.focus(); }
   pressable($("zoom-in"), function () { setZoom(zoom * 1.25, true); });
   pressable($("zoom-out"), function () { setZoom(zoom / 1.25, true); });
   pressable($("loupe-close"), closeLoupe);
@@ -639,11 +656,57 @@
   view.addEventListener("pointerup", endDrag);
   view.addEventListener("pointercancel", endDrag);
 
+  /* ---------- crew handbook ---------- */
+
+  // Reference pages (handouts/reference/), shown on a printed card — deliberately not on the CRT,
+  // so it never reads as a received message.
+  var PAGES = DATA.reference || [];
+  var handbook = $("handbook"), hbTabs = $("handbook-tabs"), hbPage = $("handbook-page"), hbKeys = [];
+  var hbIndex = Math.min(PAGES.length - 1, Math.max(0, store.get("receiver.handbook", 0) | 0));
+  function showPage(i) {
+    hbIndex = i;
+    store.set("receiver.handbook", i);
+    hbPage.innerHTML = '<div class="hb-kicker">SECTION ' + (i + 1) + " OF " + PAGES.length + "</div>" +
+      '<h1 class="hb-title">' + esc(PAGES[i].title) + "</h1>" + PAGES[i].html;
+    hbPage.scrollTop = 0;
+    hbKeys.forEach(function (k, j) {
+      k.classList.toggle("is-latched", j === i);
+      k.classList.toggle("key-cream", j === i);
+      k.setAttribute("aria-selected", j === i ? "true" : "false");
+    });
+  }
+  PAGES.forEach(function (p, i) {
+    var k = document.createElement("button");
+    k.className = "key key-small hb-tab";
+    k.setAttribute("role", "tab");
+    k.textContent = p.title;
+    pressable(k, function () { if (i !== hbIndex) showPage(i); });
+    hbTabs.appendChild(k);
+    hbKeys.push(k);
+  });
+  function openHandbook() {
+    if (!PAGES.length) return;
+    handbook.hidden = false;
+    document.body.classList.add("modal-open");
+    Sound.toggle();
+    showPage(hbIndex);
+    $("handbook-close").focus();
+  }
+  function closeHandbook() { handbook.hidden = true; document.body.classList.remove("modal-open"); screen.focus(); }
+  $("btn-handbook").disabled = !PAGES.length;
+  pressable($("btn-handbook"), openHandbook);
+  pressable($("handbook-close"), closeHandbook);
+  handbook.addEventListener("click", function (e) { if (e.target === handbook) closeHandbook(); });
+
   /* ---------- keyboard ---------- */
 
   document.addEventListener("keydown", function (e) {
     if (!loupe.hidden) {
       if (e.key === "Escape") closeLoupe();
+      return;
+    }
+    if (!handbook.hidden) {
+      if (e.key === "Escape") closeHandbook();
       return;
     }
     if (typing && (e.key === " " || e.key === "Enter" || e.key === "Escape") && document.activeElement === screen) {
@@ -693,4 +756,10 @@
   }
 
   boot();
+  // ?handbook[=N] opens the Crew Handbook at section N (GM previews, screenshots).
+  var hbParam = location.search.match(/[?&]handbook(?:=(\d+))?\b/);
+  if (hbParam && PAGES.length) {
+    if (hbParam[1]) hbIndex = Math.min(PAGES.length - 1, Math.max(0, +hbParam[1] - 1));
+    openHandbook();
+  }
 })();
