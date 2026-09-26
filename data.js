@@ -1,13 +1,14 @@
 window.RECEIVER_DATA = {
  "config": {
-  "title": "FIELD RECEIVER",
+  "title": "ILLÉRI SIGNALS",
   "model": "MK-II",
-  "station": "UNIT 00-000 // UNASSIGNED",
-  "ticker": "ALL TRAFFIC LOGGED UNDER UNION ARTICLE 12  ···  REPORT CARRIER FAULTS TO SIGNALS OFFICER",
+  "station": "UNS ILLÉRI // UNION COLONIAL MISSION",
+  "ticker": "ALL TRAFFIC LOGGED PER UCM STANDING ORDERS  ···  LATEST VALID DIRECTIVE: 4516U  ···  NO CARRIER FROM CORE",
   "boot": [
    "SELF TEST .............. OK",
    "PHOSPHOR WARM-UP ....... OK",
-   "CRYPTO MODULE .......... KEYED"
+   "CRYPTO MODULE .......... KEYED",
+   "LAST CORE CONTACT ...... 4516U"
   ]
  },
  "handouts": []
