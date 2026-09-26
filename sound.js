@@ -35,7 +35,9 @@ window.ReceiverSound = (function () {
     // message switch: crackly radio static
     static: { dur: 0.176, freq: 1590, q: 1.2, crackleGain: 0.32, hissGain: 0.18 },
     // print-out: one soft resonant tick per step, with random variation
-    tty: { interval: 36, jitter: 0.14, freq: 2180, q: 5.8, decay: 0.053, gain: 0.25, variance: 0.08, clickGain: 0 }
+    tty: { interval: 36, jitter: 0.14, freq: 2180, q: 5.8, decay: 0.053, gain: 0.25, variance: 0.08, clickGain: 0 },
+    // new traffic waiting: a small-speaker two-tone chirp, repeated
+    alert: { highFreq: 1320, lowFreq: 880, toneDecay: 0.08, toneGap: 0.1, gain: 0.22, repeats: 2, speakerFreq: 1800 }
   };
 
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -85,8 +87,34 @@ window.ReceiverSound = (function () {
     return b;
   }
 
+  var pendingAlert = false;
   function unlock() {
-    if (ctx && ctx.state === "suspended") ctx.resume();
+    if (ctx && ctx.state === "suspended") {
+      ctx.resume().then(function () {
+        if (pendingAlert) { pendingAlert = false; setTimeout(playAlert, 150); }
+      });
+    }
+  }
+
+  function tone(t, freq, decay, gain, speaker) {
+    var o = ctx.createOscillator(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    o.type = "square";
+    o.frequency.value = freq;
+    f.type = "bandpass"; f.frequency.value = speaker; f.Q.value = 0.8;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(gain, t + 0.004);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + decay);
+    o.connect(f); f.connect(g); g.connect(master);
+    o.start(t); o.stop(t + decay + 0.02);
+  }
+  function playAlert() {
+    if (!ready()) return;
+    var p = T.alert, t = ctx.currentTime + 0.02;
+    for (var r = 0; r < Math.max(1, Math.round(p.repeats)); r++) {
+      var t0 = t + r * (p.toneGap * 2 + 0.08);
+      tone(t0, p.highFreq, p.toneDecay, p.gain, p.speakerFreq);
+      tone(t0 + p.toneGap, p.lowFreq, p.toneDecay, p.gain, p.speakerFreq);
+    }
   }
   ["pointerdown", "keydown", "touchstart"].forEach(function (ev) {
     window.addEventListener(ev, unlock, { capture: true, passive: true });
@@ -159,6 +187,11 @@ window.ReceiverSound = (function () {
       var p = T.static, t = ctx.currentTime;
       noiseHit(crackleBuf, t, p.freq, p.q, p.dur, p.crackleGain);
       noiseHit(noiseBuf, t, p.freq, p.q * 0.6, p.dur * 0.7, p.hissGain);
+    },
+    alert: function () {
+      if (!ready()) return;
+      if (ctx.state !== "running") { pendingAlert = true; return; }
+      playAlert();
     },
     tty: function () {
       if (!ready()) return;

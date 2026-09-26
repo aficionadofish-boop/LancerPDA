@@ -6,7 +6,7 @@
 <title>Field Receiver</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=IM+Fell+English:ital@0;1&family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="receiver.css">
 </head>
 <body>
@@ -17,18 +17,48 @@
       <span class="lamp lamp-red is-on" aria-hidden="true"></span>
       <span class="stencil">PWR</span>
     </div>
+    <div class="power">
+      <span class="lamp" id="traffic-lamp" aria-hidden="true"></span>
+      <span class="stencil">TRAFFIC</span>
+    </div>
     <div class="brand">
+      <svg class="crest" viewBox="0 0 120 120" aria-hidden="true">
+        <!-- Union Colonial Mission crest: the astrolabe -->
+        <circle class="etch thin" cx="60" cy="60" r="56"/><circle class="etch" cx="60" cy="60" r="38"/>
+        <ellipse class="etch thin" cx="60" cy="60" rx="38" ry="14" transform="rotate(-25 60 60)"/>
+        <path class="solid" d="M60 14 L65 55 L60 60 L55 55 Z"/>
+        <path class="etch thin" d="M60 60 L60 106 M14 60 L106 60"/>
+        <path class="solid" d="M60 106 L64 66 L60 60 L56 66 Z" opacity=".45"/>
+        <circle class="solid" cx="60" cy="60" r="3.5"/>
+      </svg>
       <span class="brand-title" id="brand-title">FIELD RECEIVER</span>
       <span class="brand-model" id="brand-model">MK-II</span>
     </div>
     <div class="tag-plate" id="brand-station">UNIT 00-000</div>
-    <div class="led-window clock" aria-label="Clock">
-      <span class="led-ghost" aria-hidden="true">88:88:88</span>
-      <span class="led-live" id="clock">00:00:00</span>
+    <div class="readout">
+      <span class="stencil tiny">SHIP TIME</span>
+      <div class="led-window clock" aria-label="Ship time">
+        <span class="led-ghost" aria-hidden="true">88:88:88</span>
+        <span class="led-live" id="clock">00:00:00</span>
+      </div>
+    </div>
+    <div class="readout" id="realtime-box" hidden>
+      <span class="stencil tiny" id="realtime-label">UNION RT (EST)</span>
+      <div class="led-window clock" aria-label="Union realtime, estimated">
+        <span class="led-ghost" aria-hidden="true" id="realtime-ghost">88888</span>
+        <span class="led-live" id="realtime">-----</span>
+      </div>
     </div>
   </header>
 
   <aside class="plate log-panel riveted" aria-label="Signal log">
+    <div class="orders" id="orders">
+      <div class="orders-head">
+        <span class="stencil small">STANDING ORDERS</span>
+        <span class="orders-state"><span class="lamp" id="orders-lamp" aria-hidden="true"></span><span id="orders-validity">NONE ON FILE</span></span>
+      </div>
+      <button class="key key-cream orders-key" id="btn-orders" disabled>OPEN DIRECTIVE</button>
+    </div>
     <div class="panel-title"><span class="stencil">SIGNAL LOG</span></div>
     <div class="channel-keys" role="radiogroup" aria-label="Channel">
       <button class="key key-small" data-filter="all" role="radio">ALL</button>
@@ -128,6 +158,7 @@
 
 <script src="data.js"></script>
 <script src="sound.js"></script>
+<script src="seal.js"></script>
 <script src="receiver.js"></script>
 </body>
 </html>
