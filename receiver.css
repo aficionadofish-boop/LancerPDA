@@ -539,6 +539,7 @@ button { font: inherit; color: inherit; }
 .scr-map-hint { opacity: 0.7; font-size: 0.85em; }
 .scr-chart { cursor: zoom-in; }
 .cursor { display: inline-block; width: 0.55em; height: 1em; background: var(--ph); vertical-align: -0.12em; animation: blink 1s steps(1) infinite; }
+.cursor.is-still { animation: none; opacity: 0.8; }   /* standby: no blink, see standby() in receiver.js */
 @keyframes blink { 50% { opacity: 0; } }
 .boot-line { white-space: pre-wrap; }
 .dim { opacity: 0.6; }

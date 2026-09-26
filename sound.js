@@ -202,6 +202,17 @@ window.ReceiverSound = (function () {
       var t = ctx.currentTime;
       noiseHit(noiseBuf, t, vary(p.freq, p.variance), p.q, vary(p.decay, p.variance), vary(p.gain, p.variance));
       noiseHit(noiseBuf, t, 4500, 0.7, 0.004, p.clickGain);
+    },
+    // A short print-out rattle for signals that appear instantly (already read). Scheduled on the
+    // audio clock in one go: no script timers, so nothing on screen repaints for it.
+    ttyBurst: function (seconds, volume) {
+      if (!ready()) return;
+      var p = T.tty, t0 = ctx.currentTime, t = t0;
+      while (t < t0 + seconds) {
+        noiseHit(noiseBuf, t, vary(p.freq, p.variance), p.q, vary(p.decay, p.variance), vary(p.gain, p.variance) * volume);
+        noiseHit(noiseBuf, t, 4500, 0.7, 0.004, p.clickGain * volume);
+        t += vary(p.interval, p.jitter / 2) / 1000;
+      }
     }
   };
 })();

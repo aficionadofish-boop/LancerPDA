@@ -448,11 +448,26 @@
     });
   }
 
-  function idle(lines) {
+  function idle(lines, still) {
     if (typing) typing.finish();
     screen.innerHTML = lines.map(function (l) { return '<div class="boot-line">' + (l || " ") + "</div>"; }).join("") +
-      '<div class="boot-line"><span class="cursor"></span></div>';
+      '<div class="boot-line"><span class="cursor' + (still ? " is-still" : "") + '"></span></div>';
     updateCorruption();
+  }
+
+  // Nothing selected: the receiver waits. The cursor stands still here (no blink), because a
+  // continuous animation on the CRT costs a full repaint per blink in Firefox.
+  function standby(quiet) {
+    if (typing) typing.finish();
+    current = null;
+    setSignal(0);
+    if (!quiet) staticBurst(120);
+    var unread = ITEMS.filter(function (h) { return !seen[h.id]; }).length;
+    idle(["RECEIVER STANDBY", "",
+          ITEMS.length ? ITEMS.length + " SIGNALS IN LOG — " + unread + " UNREAD" : "AWAITING TRANSMISSION.",
+          ITEMS.length ? "SELECT A SIGNAL FROM THE LOG." : ""], true);
+    try { history.replaceState(null, "", location.search); } catch (e) { /* file:// may refuse */ }
+    markList();
   }
 
   function show(id, opts) {
@@ -467,6 +482,7 @@
     staticBurst(opts.quiet ? 110 : 190);
     render(item);
     if (firstTime && !REDUCED && !NOBOOT && !opts.instant) typeOut(screen);
+    else if (!opts.instant) Sound.ttyBurst(0.55, 0.75);   // already read: a short rattle at 75%
     try { history.replaceState(null, "", location.search + "#" + encodeURIComponent(id)); } catch (e) { /* file:// may refuse */ }
     markList();
   }
@@ -493,7 +509,7 @@
         (h.received || h.sent ? "<span>" + esc(h.received || h.sent) + "</span>" : "") + "</span>" +
         '<span class="log-title">' + esc(h.title) + "</span>" +
         '<span class="log-from">' + esc(h.from || "UNKNOWN SOURCE") + "</span>";
-      pressable(b, function () { if (h.id !== current) show(h.id); });
+      pressable(b, function () { if (h.id !== current) show(h.id); else standby(); });
       logBox.appendChild(b);
       logKeys[h.id] = b;
     });
@@ -515,7 +531,7 @@
     var list = filtered(), pos = -1;
     for (var j = 0; j < list.length; j++) if (list[j].id === current) pos = j;
     $("counter").textContent = pos < 0 ? "---/" + pad3(list.length) : pad3(pos + 1) + "/" + pad3(list.length);
-    $("btn-older").disabled = pos <= 0;
+    $("btn-older").disabled = pos === 0 || !list.length;      // from standby, OLDER opens the newest
     $("btn-newer").disabled = pos < 0 || pos >= list.length - 1;
     var unread = ITEMS.some(function (h) { return !seen[h.id]; });
     trafficLamp.className = "lamp" + (unread ? " is-on is-blink" : "");
@@ -540,7 +556,7 @@
   function step(dir) {
     var list = filtered(), pos = -1;
     for (var i = 0; i < list.length; i++) if (list[i].id === current) pos = i;
-    var next = list[pos + dir];
+    var next = pos < 0 ? (dir < 0 ? list[list.length - 1] : null) : list[pos + dir];
     if (next) show(next.id);
   }
 
@@ -551,7 +567,7 @@
       var list = filtered();
       var inList = list.some(function (h) { return h.id === current; });
       buildList();
-      if (!inList && list.length) show(list[list.length - 1].id, { quiet: true });
+      if (!inList && list.length) standby();
       else if (!list.length) {
         current = null;
         setSignal(0);
@@ -714,6 +730,7 @@
       typing.finish();
       return;
     }
+    if (e.key === "Escape" && !typing && current) { standby(); return; }
     if (e.target && e.target.tagName === "BUTTON" && (e.key === " " || e.key === "Enter")) return;
     if (e.key === "ArrowLeft") { e.preventDefault(); step(-1); }
     if (e.key === "ArrowRight") { e.preventDefault(); step(1); }
@@ -726,11 +743,10 @@
 
   /* ---------- boot ---------- */
 
+  // Only a #id in the address opens a signal at start; otherwise the receiver stands by.
   function pickStart() {
     var fromHash = decodeURIComponent(location.hash.slice(1));
-    if (fromHash && byId(fromHash)) return fromHash;
-    for (var i = ITEMS.length - 1; i >= 0; i--) if (!seen[ITEMS[i].id]) return ITEMS[i].id;
-    return ITEMS.length ? ITEMS[ITEMS.length - 1].id : null;
+    return fromHash && byId(fromHash) ? fromHash : null;
   }
 
   function boot() {
@@ -747,9 +763,10 @@
     var booted = NOBOOT;
     try { booted = booted || sessionStorage.getItem("receiver.booted") === "1"; sessionStorage.setItem("receiver.booted", "1"); } catch (e) { /* ignore */ }
 
-    if (booted && start) { show(start, { quiet: true }); return; }
+    if (booted) { if (start) show(start, { quiet: true }); else standby(true); return; }
+    if (ITEMS.length) lines.push("SELECT A SIGNAL FROM THE LOG.");
     idle(lines);
-    if (REDUCED || NOBOOT) { if (start) show(start, { instant: true }); return; }
+    if (REDUCED || NOBOOT) { if (start) show(start, { instant: true }); else standby(true); return; }
     typeOut(screen, function () {
       if (start) setTimeout(function () { if (!current) show(start); }, 700);
     });
