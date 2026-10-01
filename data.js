@@ -65,6 +65,22 @@ window.RECEIVER_DATA = {
    "ref": "ILR/XO-OP-0051-01",
    "footer": "READ AND ACKNOWLEDGE",
    "stamp": "AUTHORIZED"
+  },
+  {
+   "id": "004",
+   "title": "Exercise DeGroot Keep",
+   "type": "comms",
+   "style": "record",
+   "from": "Hangar Division, Training Office",
+   "origin": "LOCAL",
+   "sent": "SY 51.02.10",
+   "received": "",
+   "lag": "",
+   "signal": 100,
+   "html": "<table><tbody><tr><td>Exercise</td><td>DEGROOT KEEP</td></tr><tr><td>Assigned</td><td>Pathfinder Lance: Ensigns POWELL, DALMAS, DANTESS</td></tr><tr><td>Location</td><td>V-Reality chamber, Deck 14</td></tr><tr><td>Report</td><td>On receipt</td></tr><tr><td>Authority</td><td>Commander O. Halvard, Hangar Division</td></tr></tbody></table>\n<h2>1. Background</h2>\n<p>The exercise reconstructs an engagement from the Mission archive.</p>\n<p>In 4511U the Second Committee recontacted VEYLE, a world separated from Union for several centuries, and annexed it. The noble houses of Veyle did not all accept annexation.</p>\n<p>House DeGroot held its seat, DeGroot Keep, at the head of a narrow canyon. The Keep's walls were assessed as impenetrable to the forces available. A SecComm field commander, acting without authorisation, raided the Keep regardless.</p>\n<p>The defence was led by the House's butler in a heavy construction machine, with the House knights in early light infantry frames. Mines had been laid along the canyon floor.</p>\n<p>When his assault stalled, the commander packed the last of his reserve explosives into a single casing and had it delivered to the foot of the wall. The detonation brought down half the wall, and the Keep fell.</p>\n<h2>2. Exercise</h2>\n<p>The lance takes the role of the delivery element. Deliver the charge along the canyon to the foot of the Keep's wall before the timer runs out.</p>\n<h2>3. Conditions</h2>\n<ul><li>The charge is heavy and must be dragged. It cannot be moved while an opposing unit is in contact with it.</li><li>The canyon is mined. Mines are not shown without an active sensor search.</li><li>The charge detonates on a fixed timer, wherever it is.</li><li>Opposing units are reconstructed from archive records of the House's forces.</li></ul>\n<h2>Objectives</h2>\n<ul><li><strong>Primary:</strong> the charge detonates at the foot of the wall.</li></ul>\n<h2>Notes</h2>\n<ul><li>All three Ensigns are expected. Absences are reported to the Commander.</li></ul>\n<p>— Training Office, Hangar Division, by order of Commander Halvard</p>",
+   "ref": "ILR/HD-TR-0051-02",
+   "footer": "ATTENDANCE MANDATORY",
+   "stamp": "AUTHORIZED"
   }
  ],
  "reference": [
