@@ -81,6 +81,36 @@ window.RECEIVER_DATA = {
    "ref": "ILR/HD-TR-0051-02",
    "footer": "ATTENDANCE MANDATORY",
    "stamp": "AUTHORIZED"
+  },
+  {
+   "id": "005",
+   "title": "Visitor Guide",
+   "type": "intel",
+   "style": "machine",
+   "from": "PERSEPHONE // VISITOR SERVICES",
+   "origin": "RECOVERED CORE",
+   "sent": "SY 51.02.26",
+   "received": "SY 51.02.26",
+   "lag": "",
+   "signal": 72,
+   "html": "<p>FILE RECOVERED: VISITOR GUIDE, CRADLE HALL<br>DELIVER TO: ALL VISITORS IN RANGE</p>\n<p>Welcome home! Thank you for travelling with the Persephone. Your visitor guide, admission ticket and transit pass are attached.</p>\n<figure><img src=\"assets/visitor_guide_crt.png\" data-full=\"assets/visitor_guide.png\" alt=\"VISITOR GUIDE · PRESS TO OPEN\" loading=\"lazy\"><figcaption>VISITOR GUIDE · PRESS TO OPEN</figcaption></figure>\n<p>Please keep your ticket and your pass with you at all times. Enjoy your visit!</p>",
+   "footer": "EOF // HAVE A NICE DAY"
+  },
+  {
+   "id": "006",
+   "title": "Operation Fer-De-Lance",
+   "type": "comms",
+   "style": "record",
+   "from": "Office of the Executive Officer",
+   "origin": "LOCAL",
+   "sent": "SY 51.03.02",
+   "received": "",
+   "lag": "",
+   "signal": 100,
+   "html": "<table><tbody><tr><td>Operation</td><td>FER-DE-LANCE</td></tr><tr><td>Assigned</td><td>Pathfinder Lance</td></tr><tr><td>Authority</td><td>The Proconsul, under the Charter of Expedition</td></tr><tr><td>Prepared by</td><td>PERSEVERANCE (NHP), from recovered data</td></tr></tbody></table>\n<h2>1. Situation</h2>\n<p>a. Enemy forces. The vessel is controlled by its AI-core. The AI-core has withdrawn from the outer sector and is fortifying the inner sectors. Expect autonomous defence units and automated hazards. Strength and dispositions unknown. Resistance is expected to increase toward the core.</p>\n<p>b. Biological anomaly. Uncontrolled growth occupies part of the inner sectors and has entered the freight tunnel. The area returns no sensor signal. Extent and nature unknown. Treat as hostile.</p>\n<p>c. Friendly forces. Outer Sector Four is held and sealed. UNS Illéri remains on station. No fire support is available inside the vessel.</p>\n<p>d. Recovered data indicates that the AI-core can be forced to reboot from a trigger in the core storage and management area.</p>\n<h2>2. Mission</h2>\n<p>The Pathfinder Lance is to advance from Outer Sector Four to the core storage and management area and force a reboot of the AI-core.</p>\n<h2>3. Execution</h2>\n<p>a. Concept. The lance enters the inner sectors by a bore from Outer Sector Four, travels by the freight line toward the core, and completes the approach across the anomaly.</p>\n<p>b. Phase 1, breach. An Illéri boring unit drills from Outer Sector Four into Cryovault Block C. The breach point is a section recorded as a total loss. No intact cryovault section is to be breached. The hull sealant closes the bore behind the unit.</p>\n<p>c. Phase 2, freight line. The lance proceeds by the central corridor to the freight terminus and boards under the recovered transit authorisation. The line has a maintenance depot short of the anomaly. The lance is to halt there to rest, carry out maintenance and recover serviceable stores.</p>\n<p>d. Phase 3, anomaly. The line is blocked by growth short of the core. The lance detrains at the blockage and advances mounted through the anomaly to the command centre on its far side. No route through is known.</p>\n<p>e. Phase 4, core. From the command centre the lance enters the core area and executes the reboot.</p>\n<figure><img src=\"assets/fer_de_lance_route.png\" alt=\"ROUTE CHART · PRESS CHART TO MAGNIFY\" loading=\"lazy\"><figcaption>ROUTE CHART · PRESS CHART TO MAGNIFY</figcaption></figure>\n<h2>Objectives</h2>\n<ul><li>Primary: force a reboot of the AI-core.</li><li>Secondary: recover serviceable colony hardware and stores.</li></ul>\n<h2>4. Service support</h2>\n<p>a. The lance departs at full readiness.</p>\n<p>b. On breakthrough the boring unit sheds its drill assembly and armour and accompanies the lance as a tracked carrier for spares and maintenance stores. It is to be protected.</p>\n<p>c. No resupply is possible inside the vessel, other than stores recovered on the route.</p>\n<h2>Rules of engagement</h2>\n<p>Under the Charter of Expedition:</p>\n<ul><li>Art. 4: the vessel, its seed vaults and its cryogenic vaults are to be preserved.</li><li>Art. 10: a machine intelligence that refuses the Expedition's authority is hostile.</li></ul>\n<h2>5. Command and signal</h2>\n<p>a. Communications with the Illéri are expected to hold, except within the anomaly, where total loss is expected.</p>\n<p>b. While out of contact, the lance acts on its own authority, within these orders.</p>\n<p>— Executive Officer, UNS Illéri, by order of the Proconsul</p>",
+   "ref": "ILR/XO-OP-0051-02",
+   "footer": "READ AND ACKNOWLEDGE",
+   "stamp": "AUTHORIZED"
   }
  ],
  "reference": [

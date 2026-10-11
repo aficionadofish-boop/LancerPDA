@@ -537,7 +537,7 @@ button { font: inherit; color: inherit; }
 .scr-meta dd { margin: 0; }
 .scr-end { margin-top: 1.4em; opacity: 0.6; text-align: center; letter-spacing: 0.12em; }
 .scr-map-hint { opacity: 0.7; font-size: 0.85em; }
-.scr-chart { cursor: zoom-in; }
+.scr-chart, .scr-body figure img { cursor: zoom-in; }
 .cursor { display: inline-block; width: 0.55em; height: 1em; background: var(--ph); vertical-align: -0.12em; animation: blink 1s steps(1) infinite; }
 .cursor.is-still { animation: none; opacity: 0.8; }   /* standby: no blink, see standby() in receiver.js */
 @keyframes blink { 50% { opacity: 0; } }
@@ -749,7 +749,7 @@ button { font: inherit; color: inherit; }
   touch-action: none;
 }
 .loupe-view.is-dragging { cursor: grabbing; }
-.loupe-view img { display: block; max-width: none; user-select: none; -webkit-user-drag: none; }
+.loupe-view img { display: block; margin: 0 auto; max-width: none; user-select: none; -webkit-user-drag: none; }
 
 /* ---------- header readouts, traffic lamp ---------- */
 

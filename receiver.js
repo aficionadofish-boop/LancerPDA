@@ -5,6 +5,7 @@
 
   var DATA = window.RECEIVER_DATA || { config: {}, handouts: [] };
   var CFG = DATA.config || {};
+  var KEY = CFG.storage || "receiver";          // storage prefix: the groups' sites share one origin
   var ITEMS = DATA.handouts || [];               // chronological, oldest first
   var Sound = window.ReceiverSound;
   var TYPE_NAME = { comms: "TRANSMISSION", intel: "RECOVERED DATA", map: "CHART" };
@@ -23,11 +24,11 @@
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* ignore */ } }
   };
   var seen = {};
-  store.get("receiver.seen", []).forEach(function (id) { seen[id] = true; });
+  store.get(KEY + ".seen", []).forEach(function (id) { seen[id] = true; });
   function markSeen(id) {
     if (seen[id]) return;
     seen[id] = true;
-    store.set("receiver.seen", Object.keys(seen));
+    store.set(KEY + ".seen", Object.keys(seen));
   }
 
   /* ---------- physical keys ---------- */
@@ -344,7 +345,7 @@
           new Array(filled + 1).join("█") + new Array(cells - filled + 1).join("░") + "</span></div>";
       }
     } else if (style === "machine") {
-      head = "▌SEEDMIND // RAW DUMP 0x" + hexId(item.id);
+      head = "▌CORE // RAW DUMP 0x" + hexId(item.id);
       end = item.footer ? esc(item.footer) : "EOF // INTEGRITY CHECK FAILED";
     } else if (style === "imperial") {
       var motto = item.motto || CFG.imperial_motto || "IN LUCE PERPETUA";
@@ -588,13 +589,16 @@
   screen.addEventListener("click", function (e) {
     if (typing) { typing.finish(); return; }
     var fig = e.target.closest && e.target.closest(".scr-chart");
-    if (fig) openLoupe(fig.getAttribute("data-src"));
+    if (fig) { openLoupe(fig.getAttribute("data-src")); return; }
+    // A picture inside a handout's text opens in the same viewer, off the CRT glass.
+    var img = e.target.closest && e.target.closest(".scr-body figure img");
+    if (img) openLoupe(img.getAttribute("data-full") || img.getAttribute("src"));
   });
 
   /* ---------- phosphor knob ---------- */
 
   var PHOSPHORS = [["", -40], ["ph-green", 0], ["ph-white", 40]];
-  var phosphor = Math.min(2, Math.max(0, store.get("receiver.phosphor", 0) | 0));
+  var phosphor = Math.min(2, Math.max(0, store.get(KEY + ".phosphor", 0) | 0));
   function applyPhosphor() {
     var crt = $("crt");
     crt.classList.remove("ph-green", "ph-white");
@@ -605,7 +609,7 @@
   onPress($("knob"), turnKnob);
   function turnKnob() {
     phosphor = (phosphor + 1) % PHOSPHORS.length;
-    store.set("receiver.phosphor", phosphor);
+    store.set(KEY + ".phosphor", phosphor);
     Sound.detent();
     applyPhosphor();
   }
@@ -678,10 +682,10 @@
   // so it never reads as a received message.
   var PAGES = DATA.reference || [];
   var handbook = $("handbook"), hbTabs = $("handbook-tabs"), hbPage = $("handbook-page"), hbKeys = [];
-  var hbIndex = Math.min(PAGES.length - 1, Math.max(0, store.get("receiver.handbook", 0) | 0));
+  var hbIndex = Math.min(PAGES.length - 1, Math.max(0, store.get(KEY + ".handbook", 0) | 0));
   function showPage(i) {
     hbIndex = i;
-    store.set("receiver.handbook", i);
+    store.set(KEY + ".handbook", i);
     hbPage.innerHTML = '<div class="hb-kicker">SECTION ' + (i + 1) + " OF " + PAGES.length + "</div>" +
       '<h1 class="hb-title">' + esc(PAGES[i].title) + "</h1>" + PAGES[i].html;
     hbPage.scrollTop = 0;
@@ -761,7 +765,7 @@
     lines.push(ITEMS.length ? ITEMS.length + " SIGNALS IN LOG — " + unread + " UNREAD" : "AWAITING TRANSMISSION.");
     var start = pickStart();
     var booted = NOBOOT;
-    try { booted = booted || sessionStorage.getItem("receiver.booted") === "1"; sessionStorage.setItem("receiver.booted", "1"); } catch (e) { /* ignore */ }
+    try { booted = booted || sessionStorage.getItem(KEY + ".booted") === "1"; sessionStorage.setItem(KEY + ".booted", "1"); } catch (e) { /* ignore */ }
 
     if (booted) { if (start) show(start, { quiet: true }); else standby(true); return; }
     if (ITEMS.length) lines.push("SELECT A SIGNAL FROM THE LOG.");
