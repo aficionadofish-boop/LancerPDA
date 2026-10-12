@@ -968,6 +968,36 @@ button { font: inherit; color: inherit; }
 .crt-content th, .crt-content td { border: 1px solid var(--ph-dim); padding: 2px 10px; text-align: left; vertical-align: top; }
 .crt-content th { font-weight: normal; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; }
 
+/* a name that opens a picture in the chart viewer */
+.view-link { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+.view-link::after { content: " \25B8"; opacity: 0.7; }
+.view-link:hover { color: var(--ph-hi, inherit); }
+
+/* stat cards (::: card): a side column of stats beside the features, like a scan card; stacked when narrow */
+.statcard {
+  display: grid;
+  grid-template-columns: 13.5em minmax(0, 1fr);
+  gap: 0 16px;
+  border: 1px solid var(--ph-dim);
+  padding: 8px 12px 2px;
+  margin: 0 0 1.2em;
+  font-size: 0.94em;
+  line-height: 1.38;
+}
+.statcard h2, .statcard h3, .statcard h4 { margin: 0 0 4px; }
+.statcard p { margin: 0 0 0.5em; }
+.statcard ul { margin: 0 0 0.6em; padding-left: 1.1em; }
+.statcard li { margin-bottom: 2px; }
+.sc-side table { margin: 0 0 0.5em; }
+.sc-side { font-size: 0.92em; }
+.sc-side table { width: 100%; }
+.sc-side td { padding: 0 4px; border: 0; border-bottom: 1px dotted var(--ph-dim); line-height: 1.3; }
+.sc-side td:nth-child(2) { text-align: right; }
+.sc-side td:nth-child(odd) { opacity: 0.7; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9em; }
+.sc-side ul { padding-left: 0.9em; }
+.sc-main p:has(> strong:only-child) { margin: 0.2em 0 0.15em; }
+@media (max-width: 760px) { .statcard { grid-template-columns: 1fr; } }
+
 /* ---------- crew handbook: a printed card, not the CRT ---------- */
 
 .handbook {

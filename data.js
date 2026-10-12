@@ -111,6 +111,21 @@ window.RECEIVER_DATA = {
    "ref": "ILR/XO-OP-0051-02",
    "footer": "READ AND ACKNOWLEDGE",
    "stamp": "AUTHORIZED"
+  },
+  {
+   "id": "007",
+   "title": "Scouting Report: Fer-De-Lance",
+   "type": "intel",
+   "style": "record",
+   "from": "Navigation",
+   "origin": "LOCAL",
+   "sent": "SY 51.03.03",
+   "received": "",
+   "lag": "",
+   "signal": 100,
+   "html": "<table><tbody><tr><td>Survey</td><td>Route of Operation FER-DE-LANCE</td></tr><tr><td>For</td><td>Pathfinder Lance</td></tr><tr><td>Method</td><td>Long-range sensor survey along the planned route</td></tr><tr><td>Prepared by</td><td>Navigation</td></tr></tbody></table>\n<p>Contacts in route order. Press a contact's name for its sensor profile. Danger is Navigation's estimate, 5 the highest.</p>\n<h2>1. The freight line</h2>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_commander_veteran_spec_op_scout.png\">SCOUT</a></td><td>2</td><td>2</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_veteran_spec_op_assassin.png\">ASSASSIN</a></td><td>3</td><td>4</td></tr></tbody></table>\n<h2>2. The growth</h2>\n<p>The sector returns almost no sensor signal. No profiles could be taken.</p>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td>Sensory anomaly</td><td>6-10</td><td>3-4 (est.)</td></tr></tbody></table>\n<h2>3. Core storage and management</h2>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_elite_veteran_warden_sg_rival.png\">SG RIVAL (Warden)</a></td><td>1</td><td>4</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_veteran_exotic_elite_specter_h_e_a_d_hunter.png\">H://E-A-D HUNTER (Specter)</a></td><td>1</td><td>4</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_veteran_marine_hive_b_defender.png\">B DEFENDER (Hive)</a></td><td>1</td><td>3</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_bombard.png\">BOMBARD (reserve)</a></td><td>Unknown</td><td>3</td></tr></tbody></table>",
+   "ref": "ILR/NAV-SR-0051-03",
+   "footer": "FOR THE PATHFINDER LANCE"
   }
  ],
  "reference": [

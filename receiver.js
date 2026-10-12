@@ -590,6 +590,8 @@
     if (typing) { typing.finish(); return; }
     var fig = e.target.closest && e.target.closest(".scr-chart");
     if (fig) { openLoupe(fig.getAttribute("data-src")); return; }
+    var link = e.target.closest && e.target.closest(".view-link");     // a name that opens a picture
+    if (link) { openLoupe(link.getAttribute("data-full")); return; }
     // A picture inside a handout's text opens in the same viewer, off the CRT glass.
     var img = e.target.closest && e.target.closest(".scr-body figure img");
     if (img) openLoupe(img.getAttribute("data-full") || img.getAttribute("src"));
