@@ -826,17 +826,19 @@ button { font: inherit; color: inherit; }
 
 /* imperial: sealed transmissions from the divine empire */
 .style-imperial { text-align: left; }
-/* Drawn 1:1 so its feathers match the 3px scanline pitch; receiver.js alignSeal() nudges it
+/* Drawn 1:1 so it sits on the 3px scanline pitch; receiver.js alignSeal() nudges it
    onto the lit rows. Only shrinks on very narrow screens (alignment is then approximate). */
 .imp-seal { display: block; width: 240px; max-width: 100%; height: auto; margin: 0 auto 2px; color: var(--ph); }
 .imp-seal .dk { fill: var(--ph-bg-edge); }
 .imp-seal .dk-stroke { stroke: var(--ph-bg-edge); }
+/* High-gothic display face (GM's pick, 2026-10-31): head, motto bands, headings, drop cap, bold.
+   Blackletter is unreadable in capitals, so these are set in title case. */
 .imp-head {
-  font-family: "Cinzel", serif;
-  font-weight: 700;
+  font-family: "UnifrakturMaguntia", "Cinzel", serif;
+  font-weight: normal;
   text-align: center;
-  letter-spacing: 0.28em;
-  font-size: 1.05em;
+  letter-spacing: 0.06em;
+  font-size: 1.7em;
   margin-bottom: 8px;
 }
 .imp-frame {
@@ -855,16 +857,16 @@ button { font: inherit; color: inherit; }
   min-width: 0;
   min-height: 0;
   padding: 0 6px;
-  font-family: "Cinzel", serif;
-  font-size: 11px;
-  letter-spacing: 0.3em;
+  font-family: "UnifrakturMaguntia", "Cinzel", serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
   line-height: 24px;
   white-space: nowrap;
   opacity: 0.72;
 }
 .imp-band.is-single { justify-content: center; }
 .imp-word, .imp-sep { flex: none; }
-.imp-sep { letter-spacing: 0; opacity: 0.8; }
+.imp-sep { font-family: "Cinzel", serif; font-size: 11px; letter-spacing: 0; opacity: 0.8; }
 .imp-top { grid-column: 2; grid-row: 1; }
 .imp-bottom { grid-column: 2; grid-row: 3; }
 .imp-left, .imp-right { grid-row: 2; writing-mode: vertical-rl; padding: 6px 0; }
@@ -895,15 +897,23 @@ button { font: inherit; color: inherit; }
   column-gap: 14px;
 }
 .style-imperial .scr-body { font-family: "IM Fell English", serif; font-size: 0.92em; line-height: 1.35; }
-.style-imperial .scr-body > p:first-child::first-letter {
-  font-family: "Cinzel", serif;
-  font-weight: 700;
+.style-imperial .scr-body > p:first-of-type::first-letter {
+  font-family: "UnifrakturMaguntia", "Cinzel", serif;
+  font-weight: normal;
   font-size: 2.9em;
   float: left;
   line-height: 0.85;
   padding: 5px 8px 0 0;
 }
 .style-imperial .scr-end { font-family: "Cinzel", serif; letter-spacing: 0.25em; }
+/* a calligraphic document: real italics and engraved capitals, not the terminal's underline/inverse */
+.style-imperial .scr-body em { font-style: italic; text-decoration: none; }
+.style-imperial .scr-body strong {
+  background: none; color: inherit; text-shadow: inherit; padding: 0;
+  font-family: "UnifrakturMaguntia", "Cinzel", serif; font-weight: normal; letter-spacing: 0.04em;
+}
+.style-imperial .scr-body h2 { font-family: "UnifrakturMaguntia", "Cinzel", serif; font-weight: normal; text-align: center; letter-spacing: 0.04em; text-transform: none; font-size: 1.45em; }
+.style-imperial .scr-body hr { width: 40%; margin: 1.4em auto; }
 
 /* record: ship-internal paperwork — a printed form in a double frame, not a transmission */
 .style-record {
