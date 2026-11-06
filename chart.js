@@ -388,7 +388,7 @@
     if (b.rot !== undefined) h += row("Rotation", fmt(b.rot, 2) + " days" + (b.locked ? " (tidally locked)" : ""));
     else if (b.locked) h += row("Rotation", "Tidally locked");
     if (b.tilt !== undefined) h += row("Axial tilt", fmt(b.tilt, 1) + "°");
-    if (b.mass !== undefined) h += row("Earth masses", (b.est ? "est. " : "") + fmt(b.mass, b.mass < 1 ? 3 : 1));
+    if (b.mass !== undefined) h += row("Cradle masses", (b.est ? "est. " : "") + fmt(b.mass, b.mass < 1 ? 3 : 1));
     if (b.radius !== undefined) h += row("Radius", (b.est ? "est. " : "") + fmt(b.radius, 0) + " km");
     if (b.g !== undefined) h += row("Surface gravity", (b.est ? "est. " : "") + fmt(b.g, 2) + " G");
     if (b.temp !== undefined) h += row(/giant/i.test(b.type) ? "Temperature" : "Surface temp.", (b.est ? "est. " : "") + fmt(b.temp, 0) + " K");

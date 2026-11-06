@@ -543,7 +543,7 @@ window.RECEIVER_DATA = {
      {
       "id": "B",
       "kind": "planet",
-      "type": "Earth-like world (unconfirmed)",
+      "type": "Cradle-like world (unconfirmed)",
       "a": 0.56,
       "period": 172.2,
       "est": true,
