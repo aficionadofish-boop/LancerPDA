@@ -157,6 +157,1218 @@ window.RECEIVER_DATA = {
   {
    "title": "Life Aboard",
    "html": "<h2>Enlistment</h2>\n<p>Every person born aboard is enlisted in the Expedition from birth. Births are allotted by <strong>birth ticket</strong>.</p>\n<h2>Training</h2>\n<ol><li><strong>Aptitude assessment</strong> at age 14 decides what each crew member is best suited to learn.</li><li><strong>Primary training</strong>, five years in the assigned field. This is the crew member's main duty.</li><li><strong>Secondary training</strong> in a second duty. Crew serve in their secondary duty whenever their main duty is not required, so that no hand is idle and every post has a relief.</li></ol>\n<h2>Rations</h2>\n<p>Rations are allotted to working crew. Each week the crew votes on the flavouring of the next meal cycle. It is the only matter aboard that is put to a vote.</p>\n<h2>Fitness for duty</h2>\n<p>Perseverance and the Medical Division assess every crew member's fitness for duty.</p>\n<p>A crew member who can no longer perform their duties, through injury or age, is offered <strong>augmentation</strong>. Those who decline are euthanised under Medical Division protocol.</p>\n<h2>For pilots</h2>\n<p>The <strong>Subjectivity-Enhancement Suite</strong> is strongly recommended for all heavy chassis pilots. Fitting may be requested through the Medical Division.</p>"
+  },
+  {
+   "title": "Survey and Astrogation",
+   "html": "<h2>Survey classes</h2>\n<p>Navigation classes every catalogued system by what it may offer, as far as can be told from where the ship is. A system can carry more than one class.</p>\n<table><thead><tr><th>Class</th><th>Meaning</th></tr></thead><tbody><tr><td>A</td><td>Possibly exploitable worlds: habitable, or rich in minable material.</td></tr><tr><td>B</td><td>Research target: natural phenomena not yet explained, or a site suited to infrastructure, given with a rating (for example \"62% suitable location for a Grade 8 Blinkgate station\").</td></tr><tr><td>C-A</td><td>Human presence, not space-faring.</td></tr><tr><td>C-B</td><td>Human presence, space-faring.</td></tr><tr><td>C-C</td><td>Former human presence.</td></tr><tr><td>D</td><td>Paracausal or otherwise unexplainable phenomena.</td></tr><tr><td>X</td><td>Aliens.</td></tr><tr><td>F</td><td>Nothing of note.</td></tr></tbody></table>\n<h2>Survey status</h2>\n<p><strong>Unsurveyed</strong> systems are known only from afar. Orbits, masses and temperatures are estimates, marked ~; composition and materials are unknown. A system is <strong>Surveyed</strong> once the Expedition has been there.</p>\n<h2>Names</h2>\n<ul><li>A system carries its catalogue designation (LC-01, LC-02 and so on, numbered outward from the Red Lantern) until the crew names it.</li><li>Planets are lettered outward from their star: LC-04 A, LC-04 B. Moons are numbered after their planet: B1, B2. A binary's second star is its Secondary.</li><li>A body's type names its condition: water, arid, barren, icy or volcanic world, gas giant and so on. A condition caused by people takes the word for what was done to it: a world burned by bombardment is scorched, and a world whose civilisation died out is destroyed.</li><li>An inhabited world shows its controlling faction, its role and its type, and the faction's standing toward the Expedition.</li></ul>\n<h2>Travel times</h2>\n<p>The astrogation chart gives travel times at the ship's current cruise speed, both aboard and in Union time.</p>"
   }
- ]
+ ],
+ "chart": {
+  "name": "Lantern Cluster",
+  "union_dir": [
+   -0.5,
+   0.3,
+   -0.8
+  ],
+  "systems": [
+   {
+    "id": "lc01",
+    "pos": [
+     -0.95,
+     0.2,
+     -0.25
+    ],
+    "star": {
+     "class": "M1 III",
+     "type": "Red giant",
+     "mass": 1.1,
+     "radius": 62,
+     "temp": 3650,
+     "age": 9.8,
+     "absmag": -1.9,
+     "lum": 600.0
+    },
+    "designation": "LC-01",
+    "name": "Red Lantern",
+    "classes": [
+     "B",
+     "C-C"
+    ],
+    "survey": "Surveyed",
+    "note": "Derelict seed ship SRV-2891 *Persephone* found in solar orbit and recovered (C-C). Red Lantern B shows radial symmetry about a single feature; origin undetermined (B).",
+    "bodies": [
+     {
+      "id": "A",
+      "kind": "planet",
+      "type": "Metal-rich world",
+      "a": 0.92,
+      "period": 307.3,
+      "mass": 0.21,
+      "radius": 3050,
+      "temp": 1424,
+      "ecc": 0.012,
+      "inc": 0.4,
+      "rot": 19.6,
+      "tilt": 1.2,
+      "locked": false,
+      "pressure": 0.0,
+      "atmos": "None",
+      "volcanism": "Minor metallic magma",
+      "comp": {
+       "rock": 21,
+       "metal": 79,
+       "ice": 0
+      },
+      "materials": [
+       [
+        "Iron",
+        41.2
+       ],
+       [
+        "Nickel",
+        31.1
+       ],
+       [
+        "Chromium",
+        6.2
+       ],
+       [
+        "Manganese",
+        5.7
+       ],
+       [
+        "Tungsten",
+        2.1
+       ],
+       [
+        "Germanium",
+        1.6
+       ]
+      ],
+      "landable": false,
+      "terraform": "Not a candidate",
+      "note": "Stripped core; outer layers lost when the star swelled.",
+      "g": 0.92
+     },
+     {
+      "id": "B",
+      "kind": "planet",
+      "type": "Volcanic world",
+      "a": 6.1,
+      "period": 5246.7,
+      "mass": 0.74,
+      "radius": 5900,
+      "temp": 566,
+      "ecc": 0.034,
+      "inc": 1.1,
+      "rot": 1.42,
+      "tilt": 11.8,
+      "locked": false,
+      "pressure": 0.09,
+      "atmos": "Thin sulphur dioxide",
+      "atmos_comp": [
+       [
+        "Sulphur dioxide",
+        91.4
+       ],
+       [
+        "Carbon dioxide",
+        6.2
+       ],
+       [
+        "Nitrogen",
+        2.4
+       ]
+      ],
+      "volcanism": "Major silicate vapour geysers; continuous seismic activity",
+      "comp": {
+       "rock": 67,
+       "metal": 33,
+       "ice": 0
+      },
+      "materials": [
+       [
+        "Iron",
+        19.8
+       ],
+       [
+        "Sulphur",
+        18.6
+       ],
+       [
+        "Carbon",
+        15.7
+       ],
+       [
+        "Nickel",
+        15.0
+       ],
+       [
+        "Phosphorus",
+        10.1
+       ],
+       [
+        "Chromium",
+        8.9
+       ]
+      ],
+      "landable": false,
+      "terraform": "Not a candidate",
+      "note": "Terrain radially symmetric about one central feature, ~340 km across. Origin undetermined. Research target.",
+      "g": 0.86
+     },
+     {
+      "id": "C",
+      "kind": "planet",
+      "type": "Class III gas giant",
+      "a": 14.2,
+      "period": 18634.9,
+      "mass": 211.0,
+      "radius": 68200,
+      "temp": 361,
+      "ecc": 0.051,
+      "inc": 0.7,
+      "rot": 0.44,
+      "tilt": 23.5,
+      "locked": false,
+      "atmos": "Hydrogen, helium",
+      "atmos_comp": [
+       [
+        "Hydrogen",
+        73.6
+       ],
+       [
+        "Helium",
+        25.8
+       ],
+       [
+        "Methane",
+        0.4
+       ]
+      ],
+      "rings": "Rocky ring, reserves Common",
+      "landable": false,
+      "note": "Fuel skim by the Illéri's tenders, SY 51.03–51.06.",
+      "g": 1.84
+     },
+     {
+      "id": "C1",
+      "kind": "moon",
+      "parent": "C",
+      "type": "Barren world",
+      "a_km": 412000,
+      "period": 2.1,
+      "mass": 0.012,
+      "radius": 1180,
+      "temp": 355,
+      "pressure": 0.0,
+      "atmos": "None",
+      "locked": true,
+      "comp": {
+       "rock": 88,
+       "metal": 12,
+       "ice": 0
+      },
+      "materials": [
+       [
+        "Iron",
+        21.4
+       ],
+       [
+        "Sulphur",
+        20.1
+       ],
+       [
+        "Carbon",
+        16.9
+       ],
+       [
+        "Nickel",
+        16.2
+       ],
+       [
+        "Phosphorus",
+        10.8
+       ],
+       [
+        "Manganese",
+        8.8
+       ]
+      ],
+      "landable": true,
+      "g": 0.35
+     },
+     {
+      "id": "C2",
+      "kind": "moon",
+      "parent": "C",
+      "type": "Barren world",
+      "a_km": 1046000,
+      "period": 8.48,
+      "mass": 0.031,
+      "radius": 1730,
+      "temp": 352,
+      "pressure": 0.0,
+      "atmos": "None",
+      "locked": true,
+      "comp": {
+       "rock": 91,
+       "metal": 9,
+       "ice": 0
+      },
+      "materials": [
+       [
+        "Sulphur",
+        21.0
+       ],
+       [
+        "Iron",
+        19.2
+       ],
+       [
+        "Carbon",
+        17.6
+       ],
+       [
+        "Nickel",
+        14.5
+       ],
+       [
+        "Phosphorus",
+        11.3
+       ],
+       [
+        "Zinc",
+        5.2
+       ]
+      ],
+      "landable": true,
+      "g": 0.42
+     },
+     {
+      "id": "Belt",
+      "kind": "belt",
+      "type": "Rocky belt",
+      "a": 38.0,
+      "reserves": "Common",
+      "note": "Sparse; nothing worth the detour."
+     }
+    ]
+   },
+   {
+    "id": "lc02",
+    "pos": [
+     -0.83,
+     0.43,
+     -0.87
+    ],
+    "star": {
+     "class": "M3 V",
+     "type": "Red dwarf",
+     "mass": 0.36,
+     "radius": 0.39,
+     "temp": 3410,
+     "age": 4.6,
+     "absmag": 11.2,
+     "lum": 0.02
+    },
+    "designation": "LC-02",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc03",
+    "pos": [
+     -0.6,
+     -0.39,
+     -0.12
+    ],
+    "star": {
+     "class": "M3 V",
+     "type": "Red dwarf",
+     "mass": 0.36,
+     "radius": 0.39,
+     "temp": 3410,
+     "age": 4.2,
+     "absmag": 11.2,
+     "lum": 0.02
+    },
+    "designation": "LC-03",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc04",
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "star": {
+     "class": "K2 V",
+     "type": "Orange dwarf",
+     "mass": 0.79,
+     "radius": 0.74,
+     "temp": 4980,
+     "age": 5.6,
+     "absmag": 6.2,
+     "lum": 0.29
+    },
+    "designation": "LC-04",
+    "classes": [
+     "A",
+     "C-B"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Rocky world in the habitable zone with an oxygen-nitrogen spectrum (Class A). Structured radio from the system, and a tight-beam decree signed in the name of a self-styled emperor: a space-faring human polity (C-B). Hostile intent declared.",
+    "bodies": [
+     {
+      "id": "A",
+      "kind": "planet",
+      "type": "Unconfirmed (rocky)",
+      "a": 0.18,
+      "period": 31.4,
+      "est": true,
+      "mass": 0.4,
+      "temp": 481
+     },
+     {
+      "id": "B",
+      "kind": "planet",
+      "type": "Earth-like world (unconfirmed)",
+      "a": 0.56,
+      "period": 172.2,
+      "est": true,
+      "mass": 0.97,
+      "radius": 6300,
+      "temp": 291,
+      "atmos": "Nitrogen, oxygen (spectral)",
+      "note": "Habitable-zone transit; oxygen absorption. Unsurveyed.",
+      "g": 0.99
+     },
+     {
+      "id": "Belt",
+      "kind": "belt",
+      "type": "Belt (infrared excess)",
+      "a": 1.6,
+      "est": true
+     },
+     {
+      "id": "C",
+      "kind": "planet",
+      "type": "Class I gas giant",
+      "a": 3.1,
+      "period": 2242.9,
+      "est": true,
+      "mass": 140.0,
+      "temp": 116
+     },
+     {
+      "id": "D",
+      "kind": "planet",
+      "type": "Ice giant",
+      "a": 9.4,
+      "period": 11843.2,
+      "est": true,
+      "mass": 17.0,
+      "temp": 67
+     }
+    ],
+    "faction": {
+     "name": "Golden Star",
+     "standing": "Hostile"
+    }
+   },
+   {
+    "id": "lc05",
+    "pos": [
+     -0.79,
+     0.62,
+     0.65
+    ],
+    "star": {
+     "class": "M5 V",
+     "type": "Red dwarf",
+     "mass": 0.16,
+     "radius": 0.2,
+     "temp": 3050,
+     "age": 10.9,
+     "absmag": 13.4,
+     "lum": 0.003,
+     "companion": {
+      "class": "M5 V",
+      "type": "Red dwarf",
+      "sep": 38
+     }
+    },
+    "designation": "LC-05",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc06",
+    "pos": [
+     -1.05,
+     -0.25,
+     0.85
+    ],
+    "star": {
+     "class": "G1 V",
+     "type": "Yellow dwarf",
+     "mass": 1.02,
+     "radius": 1.03,
+     "temp": 5880,
+     "age": 4.9,
+     "absmag": 4.6,
+     "lum": 1.05
+    },
+    "designation": "LC-06",
+    "classes": [
+     "A"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Two rocky worlds, one near the habitable zone (Class A).",
+    "bodies": [
+     {
+      "id": "A",
+      "kind": "planet",
+      "type": "Unconfirmed (rocky)",
+      "a": 0.42,
+      "period": 98.4,
+      "est": true,
+      "mass": 0.5,
+      "temp": 434
+     },
+     {
+      "id": "B",
+      "kind": "planet",
+      "type": "Unconfirmed (rocky)",
+      "a": 1.21,
+      "period": 481.4,
+      "est": true,
+      "mass": 0.83,
+      "temp": 256,
+      "atmos": "Thin (spectral)"
+     },
+     {
+      "id": "C",
+      "kind": "planet",
+      "type": "Class I gas giant",
+      "a": 5.6,
+      "period": 4792.6,
+      "est": true,
+      "mass": 120.0,
+      "temp": 119
+     }
+    ]
+   },
+   {
+    "id": "lc07",
+    "pos": [
+     0.21,
+     0.4,
+     0.29
+    ],
+    "star": {
+     "class": "M5 V",
+     "type": "Red dwarf",
+     "mass": 0.16,
+     "radius": 0.2,
+     "temp": 3050,
+     "age": 2.0,
+     "absmag": 13.4,
+     "lum": 0.003
+    },
+    "designation": "LC-07",
+    "classes": [
+     "B"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Flare star: frequent energetic flares observed. Research target (B).",
+    "bodies": []
+   },
+   {
+    "id": "lc08",
+    "pos": [
+     -0.2,
+     -0.63,
+     -0.99
+    ],
+    "star": {
+     "class": "M1 V",
+     "type": "Red dwarf",
+     "mass": 0.49,
+     "radius": 0.5,
+     "temp": 3680,
+     "age": 9.3,
+     "absmag": 9.6,
+     "lum": 0.05
+    },
+    "designation": "LC-08",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc09",
+    "pos": [
+     -2.23,
+     -0.15,
+     0.14
+    ],
+    "star": {
+     "class": "M1 V",
+     "type": "Red dwarf",
+     "mass": 0.49,
+     "radius": 0.5,
+     "temp": 3680,
+     "age": 7.5,
+     "absmag": 9.6,
+     "lum": 0.05,
+     "companion": {
+      "class": "M1 V",
+      "type": "Red dwarf",
+      "sep": 0.3
+     }
+    },
+    "designation": "LC-09",
+    "classes": [
+     "B"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Eclipsing binary; periodic dimming every 61 days. Research target (B).",
+    "bodies": []
+   },
+   {
+    "id": "lc10",
+    "pos": [
+     -1.18,
+     0.29,
+     -1.71
+    ],
+    "star": {
+     "class": "M4 Ve",
+     "type": "Red dwarf (flare star)",
+     "mass": 0.22,
+     "radius": 0.27,
+     "temp": 3200,
+     "age": 1.0,
+     "absmag": 12.3,
+     "lum": 0.01
+    },
+    "designation": "LC-10",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc11",
+    "pos": [
+     0.45,
+     -0.48,
+     -0.11
+    ],
+    "star": {
+     "class": "K5 V",
+     "type": "Orange dwarf",
+     "mass": 0.69,
+     "radius": 0.68,
+     "temp": 4440,
+     "age": 2.7,
+     "absmag": 7.4,
+     "lum": 0.14
+    },
+    "designation": "LC-11",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc12",
+    "pos": [
+     0.35,
+     -0.15,
+     0.59
+    ],
+    "star": {
+     "class": "G8 V",
+     "type": "Yellow dwarf",
+     "mass": 0.92,
+     "radius": 0.9,
+     "temp": 5490,
+     "age": 7.1,
+     "absmag": 5.4,
+     "lum": 0.72
+    },
+    "designation": "LC-12",
+    "classes": [
+     "A"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Several gas giants with large moon systems, and dense debris fields: likely rich in minable material (Class A).",
+    "bodies": [
+     {
+      "id": "A",
+      "kind": "planet",
+      "type": "Class III gas giant",
+      "a": 0.9,
+      "period": 325.1,
+      "est": true,
+      "mass": 96.0,
+      "temp": 270
+     },
+     {
+      "id": "B",
+      "kind": "planet",
+      "type": "Class I gas giant",
+      "a": 2.4,
+      "period": 1415.8,
+      "est": true,
+      "mass": 280.0,
+      "temp": 165
+     },
+     {
+      "id": "Belt 1",
+      "kind": "belt",
+      "type": "Belt (infrared excess)",
+      "a": 4.2,
+      "est": true
+     },
+     {
+      "id": "C",
+      "kind": "planet",
+      "type": "Class I gas giant",
+      "a": 6.8,
+      "period": 6752.4,
+      "est": true,
+      "mass": 190.0,
+      "temp": 98
+     },
+     {
+      "id": "D",
+      "kind": "planet",
+      "type": "Class I gas giant",
+      "a": 13.5,
+      "period": 18888.5,
+      "est": true,
+      "mass": 61.0,
+      "temp": 70
+     },
+     {
+      "id": "Belt 2",
+      "kind": "belt",
+      "type": "Belt (infrared excess)",
+      "a": 22.0,
+      "est": true
+     }
+    ]
+   },
+   {
+    "id": "lc13",
+    "pos": [
+     -1.68,
+     -0.05,
+     1.14
+    ],
+    "star": {
+     "class": "K5 V",
+     "type": "Orange dwarf",
+     "mass": 0.69,
+     "radius": 0.68,
+     "temp": 4440,
+     "age": 7.0,
+     "absmag": 7.4,
+     "lum": 0.14
+    },
+    "designation": "LC-13",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc14",
+    "pos": [
+     -0.19,
+     -0.0,
+     1.29
+    ],
+    "star": {
+     "class": "K0 V",
+     "type": "Orange dwarf",
+     "mass": 0.88,
+     "radius": 0.85,
+     "temp": 5270,
+     "age": 2.6,
+     "absmag": 5.9,
+     "lum": 0.42
+    },
+    "designation": "LC-14",
+    "classes": [
+     "B"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Stable, quiet star with a wide clear zone: 62% suitable location for a Grade 8 Blinkgate station (B).",
+    "bodies": []
+   },
+   {
+    "id": "lc15",
+    "pos": [
+     -0.2,
+     0.69,
+     1.44
+    ],
+    "star": {
+     "class": "K0 V",
+     "type": "Orange dwarf",
+     "mass": 0.88,
+     "radius": 0.85,
+     "temp": 5270,
+     "age": 2.2,
+     "absmag": 5.9,
+     "lum": 0.42
+    },
+    "designation": "LC-15",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc16",
+    "pos": [
+     -1.88,
+     0.28,
+     1.55
+    ],
+    "star": {
+     "class": "G4 V",
+     "type": "Yellow dwarf",
+     "mass": 0.98,
+     "radius": 0.96,
+     "temp": 5690,
+     "age": 6.4,
+     "absmag": 5.0,
+     "lum": 0.85
+    },
+    "designation": "LC-16",
+    "classes": [
+     "A"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Dense debris belts with metallic spectra: likely rich in minable material (Class A).",
+    "bodies": []
+   },
+   {
+    "id": "lc17",
+    "pos": [
+     0.38,
+     0.44,
+     -1.86
+    ],
+    "star": {
+     "class": "G4 V",
+     "type": "Yellow dwarf",
+     "mass": 0.98,
+     "radius": 0.96,
+     "temp": 5690,
+     "age": 3.6,
+     "absmag": 5.0,
+     "lum": 0.85
+    },
+    "designation": "LC-17",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc18",
+    "pos": [
+     -1.59,
+     0.04,
+     1.87
+    ],
+    "star": {
+     "class": "F2 V",
+     "type": "Yellow-white dwarf",
+     "mass": 1.44,
+     "radius": 1.6,
+     "temp": 6890,
+     "age": 7.4,
+     "absmag": 3.0,
+     "lum": 4.8,
+     "companion": {
+      "class": "DA",
+      "type": "White dwarf",
+      "sep": 22
+     }
+    },
+    "designation": "LC-18",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc19",
+    "pos": [
+     1.18,
+     0.53,
+     -1.18
+    ],
+    "star": {
+     "class": "A1 V",
+     "type": "White main-sequence star",
+     "mass": 2.2,
+     "radius": 1.9,
+     "temp": 9400,
+     "age": 3.4,
+     "absmag": 1.2,
+     "lum": 26.0
+    },
+    "designation": "LC-19",
+    "classes": [
+     "B"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Bright debris disk: a young system still forming planets. Research target (B).",
+    "bodies": []
+   },
+   {
+    "id": "lc20",
+    "pos": [
+     -0.08,
+     0.31,
+     2.14
+    ],
+    "star": {
+     "class": "DA",
+     "type": "White dwarf",
+     "mass": 0.62,
+     "radius": 0.012,
+     "temp": 11500,
+     "age": 3.9,
+     "absmag": 11.8,
+     "lum": 0.003
+    },
+    "designation": "LC-20",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc21",
+    "pos": [
+     1.03,
+     0.18,
+     1.63
+    ],
+    "star": {
+     "class": "DA",
+     "type": "White dwarf",
+     "mass": 0.62,
+     "radius": 0.012,
+     "temp": 11500,
+     "age": 4.1,
+     "absmag": 11.8,
+     "lum": 0.003
+    },
+    "designation": "LC-21",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc22",
+    "pos": [
+     0.8,
+     -0.06,
+     2.05
+    ],
+    "star": {
+     "class": "T6",
+     "type": "Brown dwarf",
+     "mass": 0.04,
+     "radius": 0.09,
+     "temp": 1050,
+     "age": 3.2,
+     "absmag": 17.0,
+     "lum": 1e-05,
+     "companion": {
+      "class": "T6",
+      "type": "Brown dwarf",
+      "sep": 4.6
+     }
+    },
+    "designation": "LC-22",
+    "classes": [
+     "B"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Brown-dwarf pair in a tight orbit. Research target (B).",
+    "bodies": []
+   },
+   {
+    "id": "lc23",
+    "pos": [
+     1.85,
+     -0.32,
+     -0.9
+    ],
+    "star": {
+     "class": "K3 III",
+     "type": "Orange giant",
+     "mass": 1.4,
+     "radius": 21.0,
+     "temp": 4300,
+     "age": 9.5,
+     "absmag": -0.3,
+     "lum": 140.0
+    },
+    "designation": "LC-23",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc24",
+    "pos": [
+     1.6,
+     -0.3,
+     1.18
+    ],
+    "star": {
+     "class": "F7 V",
+     "type": "Yellow-white dwarf",
+     "mass": 1.24,
+     "radius": 1.3,
+     "temp": 6280,
+     "age": 2.4,
+     "absmag": 3.6,
+     "lum": 2.3
+    },
+    "designation": "LC-24",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "No planets detected. Unremarkable.",
+    "bodies": []
+   },
+   {
+    "id": "lc25",
+    "pos": [
+     1.93,
+     0.7,
+     1.01
+    ],
+    "star": {
+     "class": "B6 V",
+     "type": "Blue-white main-sequence star",
+     "mass": 4.2,
+     "radius": 2.9,
+     "temp": 14200,
+     "age": 4.2,
+     "absmag": -0.9,
+     "lum": 520.0,
+     "companion": {
+      "class": "K5 V",
+      "type": "Orange dwarf",
+      "sep": 310
+     }
+    },
+    "designation": "LC-25",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc26",
+    "pos": [
+     2.1,
+     0.01,
+     0.76
+    ],
+    "star": {
+     "class": "M5 V",
+     "type": "Red dwarf",
+     "mass": 0.16,
+     "radius": 0.2,
+     "temp": 3050,
+     "age": 2.1,
+     "absmag": 13.4,
+     "lum": 0.003
+    },
+    "designation": "LC-26",
+    "classes": [
+     "A"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Metal-rich asteroid belt detected (Class A).",
+    "bodies": []
+   },
+   {
+    "id": "lc27",
+    "pos": [
+     2.03,
+     0.5,
+     -1.46
+    ],
+    "star": {
+     "class": "M3 V",
+     "type": "Red dwarf",
+     "mass": 0.36,
+     "radius": 0.39,
+     "temp": 3410,
+     "age": 6.1,
+     "absmag": 11.2,
+     "lum": 0.02
+    },
+    "designation": "LC-27",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc28",
+    "pos": [
+     2.17,
+     -0.69,
+     0.73
+    ],
+    "star": {
+     "class": "M1 V",
+     "type": "Red dwarf",
+     "mass": 0.49,
+     "radius": 0.5,
+     "temp": 3680,
+     "age": 8.3,
+     "absmag": 9.6,
+     "lum": 0.05
+    },
+    "designation": "LC-28",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc29",
+    "pos": [
+     1.48,
+     0.36,
+     2.27
+    ],
+    "star": {
+     "class": "K5 V",
+     "type": "Orange dwarf",
+     "mass": 0.69,
+     "radius": 0.68,
+     "temp": 4440,
+     "age": 8.7,
+     "absmag": 7.4,
+     "lum": 0.14
+    },
+    "designation": "LC-29",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   },
+   {
+    "id": "lc30",
+    "pos": [
+     1.87,
+     -0.47,
+     2.38
+    ],
+    "star": {
+     "class": "M5 V",
+     "type": "Red dwarf",
+     "mass": 0.16,
+     "radius": 0.2,
+     "temp": 3050,
+     "age": 4.1,
+     "absmag": 13.4,
+     "lum": 0.003
+    },
+    "designation": "LC-30",
+    "classes": [
+     "F"
+    ],
+    "survey": "Unsurveyed",
+    "note": "Nothing of note detected.",
+    "bodies": []
+   }
+  ],
+  "lanes": [],
+  "route": {
+   "arrived": {
+    "system": "lc01",
+    "date": "SY 51.01"
+   },
+   "legs": [
+    {
+     "from": "lc01",
+     "to": "lc04",
+     "departed": "SY 51.06",
+     "progress": 0.5,
+     "speed": 0.7,
+     "eta_ship": "SY 52.06",
+     "eta_union": "~5018U",
+     "note": "Convoy with the Persephone"
+    }
+   ],
+   "now": "SY 51.12"
+  }
+ }
 };

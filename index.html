@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=IM+Fell+English:ital@0;1&family=UnifrakturMaguntia&family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="receiver.css?v=52eb5a305f">
+<link rel="stylesheet" href="receiver.css?v=9511813c8d">
 </head>
 <body>
 <div class="console">
@@ -132,6 +132,7 @@
     <div class="control handbook-control">
       <div class="stencil small">REFERENCE</div>
       <button class="key key-cream" id="btn-handbook" disabled>CREW<br><span class="key-sub">HANDBOOK</span></button>
+      <button class="key key-cream" id="btn-chart" disabled>ASTRO<br><span class="key-sub">CHART</span></button>
     </div>
   </aside>
 
@@ -172,9 +173,28 @@
   </div>
 </div>
 
-<script src="data.js?v=979781a409"></script>
+<div class="astro" id="astro" hidden role="dialog" aria-label="Astrogation chart">
+  <div class="astro-frame riveted">
+    <div class="loupe-bar">
+      <span class="stencil" id="astro-title">ASTROGATION</span>
+      <span class="loupe-keys">
+        <button class="key key-small" id="astro-back" hidden>&#9664; CLUSTER</button>
+        <button class="key key-small" id="astro-centre">CENTRE</button>
+        <button class="key key-small" id="astro-reset">RESET VIEW</button>
+        <button class="key key-small key-red" id="astro-close">CLOSE</button>
+      </span>
+    </div>
+    <div class="astro-body">
+      <div class="astro-glass"><canvas id="astro-canvas"></canvas></div>
+      <aside class="astro-panel" id="astro-panel" aria-live="polite"></aside>
+    </div>
+  </div>
+</div>
+
+<script src="data.js?v=15d9843ba3"></script>
 <script src="sound.js?v=147d22ea62"></script>
 <script src="seal.js?v=a19a0cf6ab"></script>
 <script src="receiver.js?v=979d71c4ac"></script>
+<script src="chart.js?v=3bcd5b6d7d"></script>
 </body>
 </html>
