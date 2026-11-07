@@ -2,8 +2,8 @@
  "segment": 0,
  "lance": "HANGAR",
  "infantry": "HOLDING",
- "jumps": 0,
- "risk": 0,
+ "jumps": 1,
+ "risk": 33,
  "inf": {
   "cool": 0,
   "last": null,
