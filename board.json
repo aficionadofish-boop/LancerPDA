@@ -29,10 +29,10 @@
    "card": "The main reactor, aft on the open spine. Engineering holds the access tunnel. No enemy contact yet."
   },
   "FABRICATION": {
-   "v": 3,
+   "v": 5,
    "secured": false,
    "held": false,
-   "card": "Stores are being carried off. What is left won't cover a Full Repair before the next operation."
+   "card": "The printer has been stripped out and taken. There is no printing aboard until it is replaced."
   }
  }
 }
