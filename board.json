@@ -11,10 +11,10 @@
  },
  "sites": {
   "COMMAND": {
-   "v": 1,
+   "v": 2,
    "secured": false,
    "held": false,
-   "card": "The bridge and the command spine. Warden parties are cutting towards them from the forward locks. Bridge crew are holding the doors."
+   "card": "The Wardens hold the command spine. Comms are jammed: expect no word from the Hangar Chief or the ship until this is cleared."
   },
   "HABITATS": {
    "v": 1,
