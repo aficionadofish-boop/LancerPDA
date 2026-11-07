@@ -1,7 +1,7 @@
 {
  "segment": 0,
  "lance": "HANGAR",
- "infantry": "READY",
+ "infantry": "HOLDING",
  "jumps": 0,
  "risk": 0,
  "inf": {
@@ -19,7 +19,7 @@
   "HABITATS": {
    "v": 1,
    "secured": false,
-   "held": false,
+   "held": true,
    "card": "The hab drum: crew quarters, and the sleepers and seed stock from the Persephone. Cutting crews are reported on the outer ring."
   },
   "REACTOR": {
