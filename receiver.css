@@ -1258,3 +1258,20 @@ body.skin-steel {
   .astro-body { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1.2fr) minmax(0, 1fr); }
 }
 
+/* the ship overview board (board.js): one SVG, sized to fit, no filters or shadows */
+#btn-board[hidden] { display: none; }
+.board {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(5, 5, 4, 0.9);
+}
+.board[hidden] { display: none; }
+.board-frame { display: flex; flex-direction: column; gap: 8px; max-width: 100%; max-height: 100%; padding: 10px; background: #1a1916; border: 1px solid #000; }
+.board-host { background: #070502; line-height: 0; }
+.board-svg { display: block; width: min(calc(100vw - 48px), calc((100vh - 96px) * 1800 / 1150)); height: auto; }
+.board-hit { cursor: pointer; }
