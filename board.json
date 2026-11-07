@@ -17,10 +17,10 @@
    "card": "The bridge and the command spine. Warden parties are cutting towards them from the forward locks. Bridge crew are holding the doors."
   },
   "HABITATS": {
-   "v": 2,
+   "v": 3,
    "secured": false,
    "held": false,
-   "card": "Neurotoxin in one section of the drum. Crew are being carried out towards the Warden boats."
+   "card": "The habitats have fallen. The Wardens are taking their Tithe."
   },
   "REACTOR": {
    "v": 0,
