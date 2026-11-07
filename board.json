@@ -29,10 +29,10 @@
    "card": "The main reactor, aft on the open spine. Engineering holds the access tunnel. No enemy contact yet."
   },
   "FABRICATION": {
-   "v": 0,
+   "v": 3,
    "secured": false,
    "held": false,
-   "card": "The printers and stores in the keel pod, next to the hangar. Quartermaster's crew report no contact."
+   "card": "Stores are being carried off. What is left won't cover a Full Repair before the next operation."
   }
  }
 }
