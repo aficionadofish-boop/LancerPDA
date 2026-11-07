@@ -1,0 +1,38 @@
+{
+ "segment": 1,
+ "lance": "HANGAR",
+ "infantry": "READY",
+ "jumps": 0,
+ "risk": 0,
+ "inf": {
+  "cool": 0,
+  "last": null,
+  "used": 0
+ },
+ "sites": {
+  "COMMAND": {
+   "v": 2,
+   "secured": false,
+   "held": false,
+   "card": "The Wardens hold the command spine. Comms are jammed: expect no word from the Hangar Chief or the ship until this is cleared."
+  },
+  "HABITATS": {
+   "v": 2,
+   "secured": false,
+   "held": false,
+   "card": "Neurotoxin in one section of the drum. Crew are being carried out towards the Warden boats."
+  },
+  "REACTOR": {
+   "v": 1,
+   "secured": false,
+   "held": false,
+   "card": "The main reactor, aft on the open spine. Engineering holds the access tunnel. No enemy contact yet."
+  },
+  "FABRICATION": {
+   "v": 1,
+   "secured": false,
+   "held": false,
+   "card": "The printers and stores in the keel pod, next to the hangar. Quartermaster's crew report no contact."
+  }
+ }
+}
