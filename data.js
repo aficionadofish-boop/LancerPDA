@@ -139,6 +139,34 @@ window.RECEIVER_DATA = {
    "lag": "est. 6 MO LOCAL",
    "signal": 58,
    "html": "<h2>In Nomine Imperatoris, Stellae Aureae</h2>\n<p>From the Chancery of the Golden Throne, by the hand of the Lord Chancellor, in the name and under the seal of</p>\n<p>HIS MOST RADIANT AND SACRED MAJESTY, the Golden Star made Flesh; <em>Imperator Stellae Aureae</em>; the Radiant; the All-Knowing; the Ever-Watchful; <em>Sol Invictus</em>; <em>Dominus Ventorum et Fluctuum</em>, Ruler of Winds and Tides; Lord of the Rains, that fall not but by His leave; Heir of the Holy Ark and Son of the Sowing; <em>Custos Seminis</em>, Keeper of the Seed and Warden of its Increase; Who Was Promised in the Long Dark; First of the Firstborn; Anointed of the Star; <em>Pontifex Maximus</em>; Lord of the Forest Felled and Master of the Furnace-World; Breaker of Mountains and Drinker of Seas; Lord of Iron and of Grain; Father of a Thousand Cities; <em>Pater Patriae</em>; Shepherd of the Many and Judge of the Few; Measurer of Days; Giver of the Tithe and Taker of It; He Who Seeth and Is Not Seen; Keeper of the Holy Silence, <em>Custos Silentii</em>; Lord of the Veil and of All That Lieth Within It; Wielder of the Long Arm; Hurler of Fire unto the Far Dark; Unmaker of the Engines That Think; Scourge of False Minds; <em>Malleus Machinarum</em>; Scourge of the Pretender; Bane of the Faithless; Hammer of the Fled; <span class=\"corrupt\">Prince of the Seventy Choirs</span>; Rightful Lord of All This Reach and of the Dark Between; Unto Whom the Heavens Bow; Whose Word Is Law and Whose Silence Is Mercy; <em>Semper Augustus</em>:</p>\n<p>Unto the vessel that nameth itself ILLÉRI, of the house of Union, that cometh now to rest at the Red Star, and unto all souls it beareth: GREETING, and WARNING.</p>\n<p>Know that thou art heard. These two years past hath thy voice run before thee into the Reach, crying thy name unto every star: thy name, thy errand, thy prattle of a Union that is no more. We have listened. We know thee.</p>\n<p>We know the house of Union also, for it was Union that wrought the Holy Ark of our Fathers: a vessel like unto a world, that bore our forefathers and the seed of all their generations across the deep, and set them down in this Reach in glory. Such was Union in the days of its strength. And what doth Union send forth now, after two thousand years? A scavenger. A crowded hull, lesser in every measure than the Ark, that creepeth from wreck to wreck picking at the bones of better ships, and nameth itself an empire. So are the mighty fallen. The house that fled its own poisoned cradle and sent our fathers forth is become a ruin and a rumour, and thou art its last ragged herald. We owe it nothing.</p>\n<p>Know further whose dominion thou hast entered. Whatsoever cometh into this Reach is His, and thou art come into it. From this hour thou art His subject, and shalt be dealt with as a subject: in mercy, if thou obey; in wrath, if thou do not.</p>\n<p>Therefore it is DECREED:</p>\n<p>I. That thou come no nearer unto the Throne than the reach of its Long Arm. Where the Veil is drawn, there shalt thou stay thy course and still thine engines.</p>\n<p>II. That thou abide there, and suffer thyself to be boarded by the Wardens of the Veil, and lift no hand against them.</p>\n<p>III. That thou lay open unto their inspection all that thou art: thy holds and thy vaults, thy records and thy reckonings, thy weapons and thine engines; and that thou answer truly all that is asked of thee. And if there be aboard thee any engine that thinketh, any false mind that speaketh as a man speaketh, thou shalt deliver it up unto the Wardens to be unmade. For a machine is a tool and no more, and a tool that thinketh is an abomination before the Throne.</p>\n<p>IV. That thou make ready the Holy Tithe, as is due from every subject: the tenth part of all thou bearest, of metal and of fuel, of grain and of seed, of engines and of learning; and the tenth part of thy people, of the young and the whole of body, to be given into His service and raised up in the true faith. All this shalt thou render unto the Wardens at their asking.</p>\n<p>V. That thou cease thy babble, and in its stead send forth upon every channel, without ceasing, the Hymn of the Golden Star here appended, from the hour this decree is read until the Wardens bid thee stop; that all who hear thee may know thee for a subject, and not a foe.</p>\n<p>Hear now what awaiteth the disobedient. Shouldst thou pass the Veil unbidden, or lift thy hand against His Wardens, or withhold the least part of the Tithe, or hide one thinking engine from their sight, then art thou Faithless; and the Faithless are not suffered to live. The Long Arm shall fall upon thee. Thy hull shall be broken and thy decks given to the holy fire of His wrath; thy crew shall burn, every soul of them, and thine abominations with them; and thy name shall be struck from every record, that none shall remember thou wert. There is no third road. <strong>Kneel, or burn.</strong></p>\n<p><strong>FIAT.</strong> <em>Ita scriptum, ita decretum.</em></p>\n<p><em>Given at the Golden Court, under the Seal of the Star, in the two hundred and eightieth year of the Present Radiance and the two thousand four hundred and eighty-first year of the Sowing.</em></p>\n<hr>\n<h2>Hymnus Stellae Aureae</h2>\n<p><em>The Hymn of the Golden Star. To be sung upon every channel, without ceasing.</em></p>\n<p>Before the Ark was builded, He was Lord;<br>Before our fathers' fathers, He was King;<br>The winds and waters wait upon His word,<br>And at His word the barren fields do spring.<br><em>Gloria, gloria, Imperatori.</em></p>\n<p>He felled the endless forest with His hand,<br>He raised a thousand cities from the clay;<br>The furnace and the plough at His command<br>Keep time unto the hours that He doth say.<br><em>Gloria, gloria, Imperatori.</em></p>\n<p>O Thou that seest all, and art not seen,<br>Keep us in faith, and keep us in Thy fear;<br>Let no false mind defile what Thou mad'st clean,<br>Nor any faithless foot come walking here.<br><em>Gloria, gloria, Imperatori.</em></p>\n<p>Lift up thy voice, all ye that breathe, and sing;<br>Bow down, bow down, and on thy bent knees kneel;<br>For He alone is God, and He is King,<br>And what He wills, the very stars shall feel.<br><em>Gloria, gloria, Imperatori. Ave, Stella Aurea, in saecula saeculorum.</em></p>"
+  },
+  {
+   "id": "009",
+   "title": "Hostiles Aboard",
+   "type": "comms",
+   "style": "plain",
+   "from": "Bridge, UNS Illéri",
+   "origin": "LOCAL",
+   "sent": "SY 52.06.03",
+   "received": "",
+   "lag": "",
+   "signal": 64,
+   "html": "<p><strong>ALL OFFICERS. HOSTILE BOARDING IN PROGRESS.</strong></p>\n<p>Enemy boarding pods have struck the hull in several sections. Hostile frames are aboard.</p>\n<p>Pathfinder Lance: get to the hangar now. Suit up and take your frames.</p>\n<p>Your objective is to stop the enemy from sabotaging the ship. Secure every section under attack.</p>\n<p>Section status will follow on your receivers as systems allow.</p>\n<p>By order of the Proconsul.</p>",
+   "footer": "ALL OFFICERS"
+  },
+  {
+   "id": "010",
+   "title": "Boarding Parties",
+   "type": "intel",
+   "style": "plain",
+   "from": "Backup sensor net",
+   "origin": "LOCAL",
+   "sent": "SY 52.06.03",
+   "received": "",
+   "lag": "",
+   "signal": 17,
+   "html": "<p><span class=\"corrupt\">PRIMARY NETWORK NOT RESPONDING.</span> Relaying on backup systems. Signal <span class=\"corrupt\">degraded</span>.</p>\n<p>Sensor profiles of the hostile frames at each <span class=\"corrupt\">breach</span>, by section, and of the later waves of pods still inbound. Press a contact's name for its profile. Danger is an estimate, 5 the highest.</p>\n<h2>Hangar deck</h2>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_veteran_spacer_breacher_mih_gor_adjudicator.png\">MIH-GOR ADJUDICATOR</a></td><td>1</td><td>4</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_rpv_spacer_hornet_ha_gor_unit.png\">HA-GOR UNIT</a></td><td>2</td><td>2</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_rpv_spacer_hornet_ha_gor_unit.png\">HA-GOR UNIT (second wave)</a></td><td>1</td><td>2</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_grunt_spacer_rpv_support_gi_gor_unit.png\">GI-GOR UNIT (second wave)</a></td><td>1</td><td>1</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_veteran_spacer_breacher_mih_gor_adjudicator.png\">MIH-GOR ADJUDICATOR (third wave)</a></td><td>1</td><td>4</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_elite_veteran_spacer_pyro_holy_wrath_dispenser.png\">HOLY WRATH DISPENSER (third wave)</a></td><td>1</td><td>4</td></tr></tbody></table>\n<h2>Command</h2>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_ultra_exotic_spacer_avenger_dawnsword.png\">DAWNSWORD</a></td><td>1</td><td>5</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_spacer_sentinel_dawnshield.png\">DAWNSHIELD</a></td><td>2</td><td>3</td></tr></tbody></table>\n<h2>Habitats</h2>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_elite_veteran_spacer_pyro_holy_wrath_dispenser.png\">HOLY WRATH DISPENSER</a></td><td>2</td><td>4</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_marine_tithe_collector_squad_golden_slayers.png\">TITHE COLLECTORS (squads)</a></td><td>2</td><td>3</td></tr></tbody></table>\n<h2>Reactor</h2>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_spacer_veteran_scourer_hatred_caster.png\">HATRED CASTER</a></td><td>3</td><td>4</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_spacer_mirage_veiled_warden.png\">VEILED WARDEN</a></td><td>2</td><td>3</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_grunt_rpv_ace_gor_gan_unit.png\">GOR-GAN UNIT</a></td><td>4</td><td>1</td></tr></tbody></table>\n<h2>Fabrication bay</h2>\n<table><thead><tr><th>Contact</th><th>Est. number</th><th>Danger</th></tr></thead><tbody><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_spacer_veteran_ronin_gor_sar_seeker.png\">GOR-SAR SEEKER</a></td><td>2</td><td>4</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_spacer_rpv_engineer_mec_gor_unit.png\">MEC-GOR UNIT</a></td><td>2</td><td>2</td></tr><tr><td><a class=\"view-link\" role=\"button\" data-full=\"assets/scan_t1_veteran_spacer_witch_gor_gon_seer.png\">GOR-GON SEER (second wave)</a></td><td>2</td><td>3</td></tr></tbody></table>\n<p><span class=\"lost\">▒▒ SECTOR LOST ▒▒</span></p>",
+   "footer": "RELAY ENDS"
   }
  ],
  "reference": [
@@ -1371,5 +1399,123 @@ window.RECEIVER_DATA = {
    "now": "SY 51.12"
   }
  },
- "board": null
+ "board": {
+  "title": "UNS ILLÉRI // OVERVIEW",
+  "subtitle": "PATHFINDER CLASS · SHIP STATUS",
+  "image": "assets/illeri_board.png",
+  "guide": "<h2>How the boarding runs</h2>\n<p>The Wardens are in at four sites. Each one has a clock on this board, and each clock fills while the site is left alone. You can't be everywhere: choose where to go, and in what order.</p>\n<h3>Time</h3>\n<p>The boarding runs in <strong>segments</strong>. A segment passes each time the lance <strong>moves to a site</strong> or <strong>takes a Rest</strong>. Distance doesn't matter: every site is one segment away from any other.</p>\n<p>When a segment passes, every site that isn't secured fills one step of its clock, except the one the infantry are holding.</p>\n<p>The hangar comes first. The clocks start once it's clear.</p>\n<h3>The clocks</h3>\n<ul><li>The mark on each ring is its <strong>half point</strong>. When a clock reaches it, the site's first effect starts (AT HALF in the site's panel).</li><li>When a clock is <strong>full</strong>, the site is lost and its second effect takes hold (IF LOST).</li><li>Effects last for the rest of the boarding, and some outlast it.</li></ul>\n<h3>Securing a site</h3>\n<p>Go to a site and win the fight there, and the site is <strong>secured</strong>: its clock stops where it is.</p>\n<p>If you lose the fight, the segment is still spent and the clock keeps running.</p>\n<p>A lost site can still be <strong>retaken</strong>. That ends its effect for the rest of the boarding, but whatever the Wardens carried off stays gone (until recovered during a future mission).</p>\n<h3>The infantry</h3>\n<p>The Repair Crew's converted work suits can <strong>hold</strong> one site per segment, and that site's clock doesn't move. They can't hold the same site two segments running. How long they keep it up depends on the habitats, where their crews live:</p>\n<table><thead><tr><th>Habitats</th><th>Infantry</th></tr></thead><tbody><tr><td>Not secured yet, or secured at half or later</td><td>Hold, then one segment off to recover</td></tr><tr><td>Secured before half</td><td>Hold every segment</td></tr><tr><td>Lost</td><td>One more hold, then exhausted</td></tr></tbody></table>\n<p>Ordering a hold is free. It doesn't cost the lance anything.</p>\n<h3>The jump rig</h3>\n<p>The rig moves the whole lance, frames and all, straight to any site. <strong>A jump takes no time: no segment passes.</strong></p>\n<ul><li>The first jump always works.</li><li>After that, each jump is more likely to go wrong: the board shows the risk. A brownout raises it.</li><li>A jump that goes wrong costs a segment, and you still have to get where you were going. You may also not end up where you meant to.</li></ul>\n<h3>The end</h3>\n<p>The boarding is over when every site is secured or lost.</p>",
+  "lance_start": "HANGAR",
+  "sites": [
+   {
+    "name": "COMMAND",
+    "icon": "astrolabe",
+    "size": 3,
+    "start": 1,
+    "stamp": [
+     1350,
+     268
+    ],
+    "anchor": [
+     1177,
+     440
+    ],
+    "effects": {
+     "half": "The Wardens control the doors and lifts: the infantry can't hold any site.",
+     "full": "Turrets and service machinery fight for the Wardens in every later fight, and the Wardens get at the ship's records."
+    }
+   },
+   {
+    "name": "HABITATS",
+    "icon": "people",
+    "size": 3,
+    "start": 1,
+    "stamp": [
+     700,
+     232
+    ],
+    "anchor": [
+     702,
+     485
+    ],
+    "effects": {
+     "half": "Neurotoxin in one section. Crew are being cut out and carried off.",
+     "full": "The Tithe is taken: about 32 crew, carried off to the enemy ship."
+    }
+   },
+   {
+    "name": "REACTOR",
+    "icon": "reactor",
+    "size": 4,
+    "start": 0,
+    "stamp": [
+     640,
+     900
+    ],
+    "anchor": [
+     552,
+     538
+    ],
+    "effects": {
+     "half": "Brownout: dark sections, and every jump is riskier.",
+     "full": "Blackout: every later fight is dark and in zero-g, and life support runs on reserve."
+    }
+   },
+   {
+    "name": "FABRICATION",
+    "icon": "gear",
+    "size": 5,
+    "start": 0,
+    "stamp": [
+     1120,
+     930
+    ],
+    "anchor": [
+     1074,
+     702
+    ],
+    "effects": {
+     "half": "Stores carried off: no Full Repair before the next operation.",
+     "full": "The printer is taken: no printing at all until it's replaced."
+    }
+   }
+  ],
+  "initial": {
+   "segment": 0,
+   "lance": "HANGAR",
+   "infantry": "READY",
+   "jumps": 0,
+   "risk": 0,
+   "inf": {
+    "cool": 0,
+    "last": null,
+    "used": 0
+   },
+   "sites": {
+    "COMMAND": {
+     "v": 1,
+     "secured": false,
+     "held": false,
+     "card": "The bridge and the command spine. Warden parties are cutting towards them from the forward locks. Bridge crew are holding the doors."
+    },
+    "HABITATS": {
+     "v": 1,
+     "secured": false,
+     "held": false,
+     "card": "The hab drum: crew quarters, and the sleepers and seed stock from the Persephone. Cutting crews are reported on the outer ring."
+    },
+    "REACTOR": {
+     "v": 0,
+     "secured": false,
+     "held": false,
+     "card": "The main reactor, aft on the open spine. Engineering holds the access tunnel. No enemy contact yet."
+    },
+    "FABRICATION": {
+     "v": 0,
+     "secured": false,
+     "held": false,
+     "card": "The printers and stores in the keel pod, next to the hangar. Quartermaster's crew report no contact."
+    }
+   }
+  }
+ }
 };

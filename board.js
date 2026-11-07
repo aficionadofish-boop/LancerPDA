@@ -1,8 +1,9 @@
 /* The ship's overview board: line art of the ship with a stamp per site, each stamp's clock round its
    plate, a report card and a status panel. One SVG, redrawn only when the state or the selection
-   changes. The state is board.json, written by the GM's control page (never on this site), so the
-   text of effects that haven't happened can't be read here. While open it checks for a new state
-   every 20 s, and nothing is repainted unless it changed (Firefox). */
+   changes. The state is board.json, written by the GM's control page (never on this site); the
+   report cards for states not reached aren't here, but each site's effects at half and when lost
+   are (the AT RISK panel), and GUIDE swaps the board for the players' rules. While open it checks
+   for a new state every 20 s, and nothing is repainted unless it changed (Firefox). */
 (function () {
   "use strict";
   var AMB = "#ffb347", DIM = "#96682a", GRN = "#78ffa0", BLK = "#070502";
@@ -154,6 +155,25 @@
       o += text(76, 204 + i * 26, t, 20, chosen ? GRN : AMB, MONO);
     });
 
+    // what goes wrong at the chosen site: public, unlike the cards (the GM's), so the choice is an informed one
+    var ex = 1262, ey = 828, ew = 478, ef = chosen && chosen.effects, ecol = chosen ? GRN : AMB, ty = ey + 72;
+    o += '<rect x="' + ex + '" y="' + ey + '" width="' + ew + '" height="262" fill="' + BLK + '" stroke="' + ecol + '" stroke-width="2"/>';
+    o += '<rect x="' + ex + '" y="' + ey + '" width="' + ew + '" height="42" fill="' + ecol + '"/>';
+    o += text(ex + 16, ey + 32, chosen ? chosen.name + " // AT RISK" : "AT RISK", 34, BLK);
+    if (ef) {
+      var reached = cs.v >= half(chosen.size), lost = cs.v >= chosen.size;
+      [[reached && !cs.secured ? "AT HALF // NOW" : "AT HALF", ef.half], [lost ? "IF LOST // LOST" : "IF LOST", ef.full]].forEach(function (e) {
+        o += text(ex + 16, ty, e[0], 26, ecol);
+        ty += 26;
+        wrap(e[1], 40).slice(0, 4).forEach(function (t) { o += text(ex + 16, ty, t, 18, ecol, MONO); ty += 21; });
+        ty += 10;
+      });
+    } else {
+      wrap("Press a site to see what goes wrong there. GUIDE explains how the boarding runs.", 40).forEach(function (t) {
+        o += text(ex + 16, ty - 4, t, 18, AMB, MONO); ty += 21;
+      });
+    }
+
     // the status panel
     var x0 = 60, y0 = 690, x1 = 470, y = y0 + 58;
     o += '<rect x="' + x0 + '" y="' + y0 + '" width="' + (x1 - x0) + '" height="400" fill="' + BLK + '" stroke="' + AMB + '" stroke-width="2"/>';
@@ -191,9 +211,19 @@
   if (!btn || !B) return;
   btn.hidden = false;
   var overlay = document.getElementById("board"), host = document.getElementById("board-host");
-  var state = B.initial, raw = "", selected = null, timer = 0;
+  var state = B.initial, raw = "", selected = null, timer = 0, guide = false;
+  var guideBtn = document.getElementById("board-guide-btn");
 
-  function draw() { host.innerHTML = render(B, state, selected); }
+  function draw() { host.innerHTML = guide ? '<div class="board-guide">' + B.guide + "</div>" : render(B, state, selected); }
+  if (guideBtn && B.guide) {
+    guideBtn.hidden = false;
+    guideBtn.addEventListener("pointerdown", function () {
+      guide = !guide;
+      guideBtn.textContent = guide ? "BOARD" : "GUIDE";
+      if (window.Sound && Sound.toggle) Sound.toggle();
+      draw();
+    });
+  }
   function atSite() {
     return B.sites.some(function (s) { return s.name === state.lance; }) ? state.lance : null;
   }
@@ -204,7 +234,7 @@
       if (!t || t === raw) return;
       raw = t;
       state = JSON.parse(t);
-      if (!overlay.hidden) draw();
+      if (!overlay.hidden && !guide) draw();       // leave the guide (and where it's scrolled to) alone
     }).catch(function () { /* opened from disk: stay on the state in the build */ });
   }
   function open() {
@@ -231,5 +261,8 @@
     draw();
   });
   document.addEventListener("keydown", function (e) { if (!overlay.hidden && e.key === "Escape") close(); });
+  var pick = /[?&]site=([A-Z]+)/.exec(location.search);            // previews: ?board&site=REACTOR
+  if (pick) selected = pick[1];
   if (/[?&]board\b/.test(location.search)) open();
+  if (/[?&]board=guide\b/.test(location.search) && guideBtn && B.guide) guideBtn.dispatchEvent(new Event("pointerdown"));
 })();
