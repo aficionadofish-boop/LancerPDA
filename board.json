@@ -12,9 +12,9 @@
  "sites": {
   "COMMAND": {
    "v": 1,
-   "secured": false,
+   "secured": true,
    "held": false,
-   "card": "The bridge and the command spine. Warden parties are cutting towards them from the forward locks. Bridge crew are holding the doors."
+   "card": "Command is held. The doors and lifts answer to us again."
   },
   "HABITATS": {
    "v": 1,
