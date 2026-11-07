@@ -17,10 +17,10 @@
    "card": "The bridge and the command spine. Warden parties are cutting towards them from the forward locks. Bridge crew are holding the doors."
   },
   "HABITATS": {
-   "v": 1,
+   "v": 2,
    "secured": false,
    "held": false,
-   "card": "The hab drum: crew quarters, and the sleepers and seed stock from the Persephone. Cutting crews are reported on the outer ring."
+   "card": "Neurotoxin in one section of the drum. Crew are being carried out towards the Warden boats."
   },
   "REACTOR": {
    "v": 0,
