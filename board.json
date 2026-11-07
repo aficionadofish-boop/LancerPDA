@@ -17,10 +17,10 @@
    "card": "The bridge and the command spine. Warden parties are cutting towards them from the forward locks. Bridge crew are holding the doors."
   },
   "HABITATS": {
-   "v": 3,
+   "v": 0,
    "secured": false,
    "held": false,
-   "card": "The habitats have fallen. The Wardens are taking their Tithe."
+   "card": "The hab drum: crew quarters, and the sleepers and seed stock from the Persephone. Cutting crews are reported on the outer ring."
   },
   "REACTOR": {
    "v": 0,
