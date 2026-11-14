@@ -1,7 +1,7 @@
 {
  "segment": 2,
  "lance": "HANGAR",
- "infantry": "READY",
+ "infantry": "HOLDING",
  "jumps": 1,
  "risk": 66,
  "inf": {
@@ -31,7 +31,7 @@
   "FABRICATION": {
    "v": 2,
    "secured": false,
-   "held": false,
+   "held": true,
    "card": "The printers and stores in the keel pod, next to the hangar. Quartermaster's crew report no contact."
   }
  }
