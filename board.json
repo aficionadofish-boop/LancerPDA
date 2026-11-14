@@ -24,9 +24,9 @@
   },
   "REACTOR": {
    "v": 1,
-   "secured": true,
+   "secured": false,
    "held": false,
-   "card": "The reactor is held and power is steady."
+   "card": "The main reactor, aft on the open spine. Engineering holds the access tunnel. No enemy contact yet."
   },
   "FABRICATION": {
    "v": 1,
