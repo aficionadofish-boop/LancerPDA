@@ -3,7 +3,7 @@
  "lance": "HANGAR",
  "infantry": "HOLDING",
  "jumps": 1,
- "risk": 66,
+ "risk": 33,
  "inf": {
   "cool": 0,
   "last": null,
@@ -24,9 +24,9 @@
   },
   "REACTOR": {
    "v": 2,
-   "secured": false,
+   "secured": true,
    "held": false,
-   "card": "Brownout across the ship. Expect dark sections, and the jump rig has less power to work with."
+   "card": "The reactor is held and power is steady."
   },
   "FABRICATION": {
    "v": 2,
