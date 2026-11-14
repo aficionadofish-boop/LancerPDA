@@ -1,13 +1,13 @@
 {
- "segment": 0,
+ "segment": 1,
  "lance": "HANGAR",
- "infantry": "HOLDING",
+ "infantry": "RECOVERING",
  "jumps": 1,
  "risk": 33,
  "inf": {
-  "cool": 0,
-  "last": null,
-  "used": 0
+  "cool": 1,
+  "last": "HABITATS",
+  "used": 1
  },
  "sites": {
   "COMMAND": {
@@ -19,17 +19,17 @@
   "HABITATS": {
    "v": 1,
    "secured": false,
-   "held": true,
+   "held": false,
    "card": "The hab drum: crew quarters, and the sleepers and seed stock from the Persephone. Cutting crews are reported on the outer ring."
   },
   "REACTOR": {
-   "v": 0,
+   "v": 1,
    "secured": false,
    "held": false,
    "card": "The main reactor, aft on the open spine. Engineering holds the access tunnel. No enemy contact yet."
   },
   "FABRICATION": {
-   "v": 0,
+   "v": 1,
    "secured": false,
    "held": false,
    "card": "The printers and stores in the keel pod, next to the hangar. Quartermaster's crew report no contact."
