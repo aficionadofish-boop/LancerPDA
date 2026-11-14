@@ -1,12 +1,12 @@
 {
- "segment": 1,
+ "segment": 2,
  "lance": "HANGAR",
- "infantry": "RECOVERING",
+ "infantry": "READY",
  "jumps": 1,
  "risk": 66,
  "inf": {
-  "cool": 1,
-  "last": "HABITATS",
+  "cool": 0,
+  "last": null,
   "used": 1
  },
  "sites": {
