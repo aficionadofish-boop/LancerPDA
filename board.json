@@ -18,9 +18,9 @@
   },
   "HABITATS": {
    "v": 1,
-   "secured": false,
+   "secured": true,
    "held": false,
-   "card": "The hab drum: crew quarters, and the sleepers and seed stock from the Persephone. Cutting crews are reported on the outer ring."
+   "card": "The habitats are held. Crew who can stand are reporting to the suits."
   },
   "REACTOR": {
    "v": 1,
